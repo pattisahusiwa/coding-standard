@@ -1,0 +1,36 @@
+{
+    "name": "xynha/xynhacs",
+    "description": "PHP sniffs for Xynha projects",
+    "license": "MIT",
+    "type": "phpcodesniffer-standard",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "Asis Pattisahusiwa",
+            "email": "asis.pattisahusiwa@gmail.com"
+        }
+    ],
+    "homepage": "https://github.com/xynha/xynhacs",
+    "support": {
+        "issues": "https://github.com/xynha/xynhacs/issues"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "XynhaCS\\Tests\\": "./tests/"
+        }
+    },
+    "require": {
+        "php": ">=5.5.0"
+    },
+    "require-dev": {
+        "bartlett/php-compatinfo": "^5.2",
+        "phpunit/phpunit": "^6.5",
+        "squizlabs/php_codesniffer": "^3.4"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}
