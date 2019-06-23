@@ -9,3 +9,4 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
   - Add PSR2 standard
   - Add rule to fix wrong variable identation
   - Add spacing between class properties
+  - Add spacing between functions
