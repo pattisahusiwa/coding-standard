@@ -1,0 +1,11 @@
+{
+    "source-providers": [
+        {
+            "in": ". as current",
+            "name": "*.php"
+        }
+    ],
+    "plugins": [],
+    "analysers": [],
+    "services": []
+}

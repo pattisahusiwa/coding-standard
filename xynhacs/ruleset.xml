@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<ruleset name="xynhacs">
+    <description>PHP standard for all Xynha projects</description>
+
+    <rule ref="PSR2"/>
+
+    <!--
+    Fix wrong indentation, eq:
+      $a = 1;
+          $b = 2;
+
+      These lines should be like this
+      $a = 1;
+      $b = 2;
+    -->
+    <rule ref="Generic.WhiteSpace.ScopeIndent">
+        <properties>
+            <property name="indent" value="4"/>
+            <property name="exact" value="true" />
+            <property name="tabIndent" value="true" />
+        </properties>
+    </rule>
+
+</ruleset>

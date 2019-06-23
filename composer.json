@@ -32,5 +32,9 @@
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "sort-packages": true
+    },
+    "scripts": {
+        "compat": "php ./vendor/bin/phpcompatinfo --progress analyser:run ./tests/",
+        "test": "php ./vendor/bin/phpunit --bootstrap=\"./tests/bootstrap.php\" --testsuite unit-test"
     }
 }
