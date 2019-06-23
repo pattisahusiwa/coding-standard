@@ -21,4 +21,6 @@
         </properties>
     </rule>
 
+    <!-- Class properties spacing -->
+    <rule ref="Squiz.WhiteSpace.MemberVarSpacing"/>
 </ruleset>

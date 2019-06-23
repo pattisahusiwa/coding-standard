@@ -8,3 +8,4 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 ### Added
   - Add PSR2 standard
   - Add rule to fix wrong variable identation
+  - Add spacing between class properties

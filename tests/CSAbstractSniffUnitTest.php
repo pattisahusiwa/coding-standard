@@ -9,8 +9,11 @@ use PHP_CodeSniffer\Files\DummyFile;
 
 abstract class CSAbstractSniffUnitTest extends TestCase
 {
+
     private $incDir;
+
     private $errors = array();
+
     private $warnings = array();
 
     abstract protected function getTestFile();
@@ -32,16 +35,15 @@ abstract class CSAbstractSniffUnitTest extends TestCase
     {
         $this->assertArrayHasKey($lineNum, $this->errors, 'No error found on line ' . $lineNum);
 
+        $sources = array();
         $lineErrors = $this->errors[$lineNum];
         foreach ($lineErrors as $columnErrors) {
             foreach ($columnErrors as $errors) {
-                if ($errors['source'] === $sniff) {
-                    return $this->assertSame($sniff, $errors['source']);
-                }
+                $sources[] = $errors['source'];
             }
         }
 
-        return $this->fail($sniff . ' is not found on line ' . $lineNum);
+        $this->assertContains($sniff, $sources);
     }
 
     private function setFile($filename)

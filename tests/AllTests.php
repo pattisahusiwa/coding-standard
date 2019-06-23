@@ -2,15 +2,22 @@
 
 namespace XynhaCS\Tests;
 
-use XynhaCS\Tests\Sniffs\Identation\ScopeIndentTest;
 use PHPUnit\Framework\TestSuite;
+
+use XynhaCS\Tests\Sniffs\Identation\IdentationTestSuite;
+use XynhaCS\Tests\Sniffs\Spacing\SpacingTestSuite;
 
 final class AllTests
 {
     public static function suite()
     {
         $suite = new TestSuite('XynhaCS');
-        $suite->addTestSuite(ScopeIndentTest::class);
+
+        $identation = new IdentationTestSuite();
+        $suite->addTest($identation->getTestSuite());
+
+        $spacing = new SpacingTestSuite();
+        $suite->addTest($spacing->getTestSuite());
 
         return $suite;
     }
