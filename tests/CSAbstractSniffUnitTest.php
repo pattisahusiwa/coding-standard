@@ -33,22 +33,27 @@ abstract class CSAbstractSniffUnitTest extends TestCase
 
     final protected function sniffError($lineNum, $sniff)
     {
-        $this->assertArrayHasKey($lineNum, $this->errors, 'No error found on line ' . $lineNum);
+        if (array_key_exists($lineNum, $this->errors) === false) {
+            $this->fail('No error found on line ' . $lineNum);
+        }
 
-        $sources = array();
         $lineErrors = $this->errors[$lineNum];
         foreach ($lineErrors as $columnErrors) {
             foreach ($columnErrors as $errors) {
-                $sources[] = $errors['source'];
+                if ($errors['source'] === $sniff) {
+                    return $this->assertSame($sniff, $errors['source']);
+                }
             }
         }
 
-        $this->assertContains($sniff, $sources);
+        return $this->fail($sniff . ' is not found on line ' . $lineNum);
     }
 
     private function setFile($filename)
     {
-        $this->assertFileExists($filename, 'Can not load ' . $filename);
+        if (file_exists($filename) === false) {
+            $this->fail('Can not load ' . $filename);
+        }
 
         $content = file_get_contents($filename);
         $config = new Config();
