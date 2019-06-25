@@ -6,18 +6,39 @@ use XynhaCS\Tests\CSAbstractSniffUnitTest;
 
 final class PropertySpacingTest extends CSAbstractSniffUnitTest
 {
+
+    private $sniff = 'Squiz.WhiteSpace.MemberVarSpacing';
+
+    protected function getSniffs()
+    {
+        return $this->sniff;
+    }
+
     protected function getTestFile()
     {
         return 'Spacing' . DIRECTORY_SEPARATOR . 'PropertySpacing';
     }
-    public function testFirstPropertySpacing()
+
+    public function testSpacing()
     {
-        $this->sniffError(5, 'Squiz.WhiteSpace.MemberVarSpacing.FirstIncorrect');
+        $this->spaceBeforeFirstProperty();
+        $this->spaceBetweenProperties();
     }
 
-    public function testSpaceBetweenProperties()
+    private function spaceBeforeFirstProperty()
     {
-        $this->sniffError(6, 'Squiz.WhiteSpace.MemberVarSpacing.Incorrect');
-        $this->sniffError(7, 'Squiz.WhiteSpace.MemberVarSpacing.Incorrect');
+        $sniff = $this->sniff . '.FirstIncorrect';
+        $message = 'Expected 1 blank line(s) before first member var; 0 found';
+        $this->sniffError(5, $sniff, $message);
+    }
+
+    private function spaceBetweenProperties()
+    {
+        $sniff = $this->sniff . '.Incorrect';
+        $message = 'Expected 1 blank line(s) before member var; 0 found';
+        $this->sniffError(6, $sniff, $message);
+
+        $message = 'Expected 1 blank line(s) before member var; 2 found';
+        $this->sniffError(9, $sniff, $message);
     }
 }

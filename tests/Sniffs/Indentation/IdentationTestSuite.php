@@ -6,6 +6,7 @@ use PHPUnit\Framework\TestSuite;
 
 final class IdentationTestSuite
 {
+
     public function getTestSuite()
     {
         $suite = new TestSuite('XynhaCS_Identation');

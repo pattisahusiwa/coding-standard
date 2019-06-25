@@ -13,6 +13,7 @@ final class SpacingTestSuite
 
         $suite->addTestSuite(PropertySpacingTest::class);
         $suite->addTestSuite(ClassFunctionSpacingTest::class);
+        $suite->addTestSuite(GlobalFunctionSpacingTest::class);
 
         return $suite;
     }

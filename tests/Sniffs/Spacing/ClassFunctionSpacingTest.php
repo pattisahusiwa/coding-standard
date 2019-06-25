@@ -7,19 +7,43 @@ use XynhaCS\Tests\CSAbstractSniffUnitTest;
 final class ClassFunctionSpacingTest extends CSAbstractSniffUnitTest
 {
 
+    private $sniff = 'Squiz.WhiteSpace.FunctionSpacing';
+
+    protected function getSniffs()
+    {
+        return $this->sniff;
+    }
+
     protected function getTestFile()
     {
         return 'Spacing' . DIRECTORY_SEPARATOR . 'ClassFunctionSpacing';
     }
 
-    public function testFunctionSpacingBefore()
+    public function testClassFunctionSpacing()
     {
-        $this->sniffError(6, 'Squiz.WhiteSpace.FunctionSpacing.Before');
+        $this->spacingBefore();
+        $this->spacingAfter();
+        $this->spacingBeforeLast();
     }
 
-    public function testFunctionSpacingAfter()
+    private function spacingBefore()
     {
-        $this->sniffError(9, 'Squiz.WhiteSpace.FunctionSpacing.After');
-        $this->sniffError(13, 'Squiz.WhiteSpace.FunctionSpacing.After');
+        $sniff = $this->sniff . '.Before';
+        $message = 'Expected 1 blank line before function; 0 found';
+        $this->sniffError(6, $sniff, $message);
+    }
+
+    private function spacingAfter()
+    {
+        $sniff = $this->sniff . '.After';
+        $message = 'Expected 1 blank line after function; 2 found';
+        $this->sniffError(8, $sniff, $message);
+    }
+
+    private function spacingBeforeLast()
+    {
+        $sniff = $this->sniff . '.AfterLast';
+        $message = 'Expected 0 blank lines after function; 3 found';
+        $this->sniffError(13, $sniff, $message);
     }
 }

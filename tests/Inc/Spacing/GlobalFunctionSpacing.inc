@@ -4,6 +4,4 @@ function testA()
 function testB()
 {}
 
-
-function testC()
-{}
+echo 'test';

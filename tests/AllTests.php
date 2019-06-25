@@ -9,6 +9,7 @@ use XynhaCS\Tests\Sniffs\Spacing\SpacingTestSuite;
 
 final class AllTests
 {
+
     public static function suite()
     {
         $suite = new TestSuite('XynhaCS');
