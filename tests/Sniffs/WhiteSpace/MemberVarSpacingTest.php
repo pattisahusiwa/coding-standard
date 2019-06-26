@@ -1,10 +1,10 @@
 <?php
 
-namespace XynhaCS\Tests\Sniffs\Spacing;
+namespace XynhaCS\Tests\Sniffs\WhiteSpace;
 
 use XynhaCS\Tests\CSAbstractSniffUnitTest;
 
-final class PropertySpacingTest extends CSAbstractSniffUnitTest
+final class MemberVarSpacingTest extends CSAbstractSniffUnitTest
 {
 
     private $sniff = 'Squiz.WhiteSpace.MemberVarSpacing';
@@ -16,7 +16,7 @@ final class PropertySpacingTest extends CSAbstractSniffUnitTest
 
     protected function getTestFile()
     {
-        return 'Spacing' . DIRECTORY_SEPARATOR . 'PropertySpacing';
+        return 'WhiteSpace' . DIRECTORY_SEPARATOR . 'MemberVarSpacing';
     }
 
     public function testSpacing()

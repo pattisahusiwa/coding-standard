@@ -15,3 +15,11 @@ class Test
 
 
 }
+
+
+function testA()
+{}
+function testB()
+{}
+
+echo 'test';

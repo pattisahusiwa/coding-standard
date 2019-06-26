@@ -1,10 +1,10 @@
 <?php
 
-namespace XynhaCS\Tests\Sniffs\Spacing;
+namespace XynhaCS\Tests\Sniffs\WhiteSpace;
 
 use XynhaCS\Tests\CSAbstractSniffUnitTest;
 
-final class ClassFunctionSpacingTest extends CSAbstractSniffUnitTest
+final class FunctionSpacingTest extends CSAbstractSniffUnitTest
 {
 
     private $sniff = 'Squiz.WhiteSpace.FunctionSpacing';
@@ -16,7 +16,7 @@ final class ClassFunctionSpacingTest extends CSAbstractSniffUnitTest
 
     protected function getTestFile()
     {
-        return 'Spacing' . DIRECTORY_SEPARATOR . 'ClassFunctionSpacing';
+        return 'WhiteSpace' . DIRECTORY_SEPARATOR . 'FunctionSpacing';
     }
 
     public function testClassFunctionSpacing()
@@ -24,6 +24,8 @@ final class ClassFunctionSpacingTest extends CSAbstractSniffUnitTest
         $this->spacingBefore();
         $this->spacingAfter();
         $this->spacingBeforeLast();
+        $this->globalSpacingBefore();
+        $this->globalSpacingAfter();
     }
 
     private function spacingBefore()
@@ -45,5 +47,19 @@ final class ClassFunctionSpacingTest extends CSAbstractSniffUnitTest
         $sniff = $this->sniff . '.AfterLast';
         $message = 'Expected 0 blank lines after function; 3 found';
         $this->sniffError(13, $sniff, $message);
+    }
+
+    private function globalSpacingBefore()
+    {
+        $sniff = $this->sniff . '.Before';
+        $message = 'Expected 1 blank line before function; 2 found';
+        $this->sniffError(20, $sniff, $message);
+    }
+
+    private function globalSpacingAfter()
+    {
+        $sniff = $this->sniff . '.After';
+        $message = 'Expected 1 blank line after function; 0 found';
+        $this->sniffError(21, $sniff, $message);
     }
 }

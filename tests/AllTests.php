@@ -4,8 +4,7 @@ namespace XynhaCS\Tests;
 
 use PHPUnit\Framework\TestSuite;
 
-use XynhaCS\Tests\Sniffs\Identation\IdentationTestSuite;
-use XynhaCS\Tests\Sniffs\Spacing\SpacingTestSuite;
+use XynhaCS\Tests\Sniffs\WhiteSpace\TsWhiteSpace;
 
 final class AllTests
 {
@@ -14,11 +13,8 @@ final class AllTests
     {
         $suite = new TestSuite('XynhaCS');
 
-        $identation = new IdentationTestSuite();
-        $suite->addTest($identation->getTestSuite());
-
-        $spacing = new SpacingTestSuite();
-        $suite->addTest($spacing->getTestSuite());
+        $ws = new TsWhiteSpace();
+        $suite->addTest($ws->getTestSuite());
 
         return $suite;
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace XynhaCS\Tests\Sniffs\Identation;
+namespace XynhaCS\Tests\Sniffs\WhiteSpace;
 
 use XynhaCS\Tests\CSAbstractSniffUnitTest;
 
@@ -16,7 +16,7 @@ final class ScopeIndentTest extends CSAbstractSniffUnitTest
 
     protected function getTestFile()
     {
-        return 'Identation' . DIRECTORY_SEPARATOR . 'IncorrectExact';
+        return 'WhiteSpace' . DIRECTORY_SEPARATOR . 'ScopeIndent';
     }
 
     public function testIncorrectExactIdentation()
