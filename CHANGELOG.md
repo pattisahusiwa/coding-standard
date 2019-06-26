@@ -17,4 +17,5 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
     * No space in empty array
     * Single value array must be single line
     * Align array key and double arrow
-    * Closing parenthesis in multiline array must be in a new line and aligned.
+    * Closing parenthesis in multiline array must be in a new line and aligned
+  - Add bracket array spacing rule

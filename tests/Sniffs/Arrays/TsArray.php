@@ -12,6 +12,7 @@ final class TsArray
         $suite = new TestSuite('XynhaCS_array');
 
         $suite->addTestSuite(ArrayDeclarationTest::class);
+        $suite->addTestSuite(ArrayBracketSpacingTest::class);
 
         return $suite;
     }

@@ -48,4 +48,5 @@
         <!-- Has been handled by Squiz.WhiteSpace.OperatorSpacing -->
         <exclude name="Squiz.Arrays.ArrayDeclaration.SpaceAfterDoubleArrow"/>
     </rule>
+    <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
 </ruleset>
