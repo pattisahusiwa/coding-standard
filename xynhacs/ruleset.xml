@@ -2,6 +2,8 @@
 <ruleset name="xynhacs">
     <description>PHP standard for all Xynha projects</description>
 
+    <arg name="tab-width" value="4"/>
+
     <rule ref="PSR2"/>
 
     <!--
@@ -17,7 +19,8 @@
         <properties>
             <property name="indent" value="4"/>
             <property name="exact" value="true" />
-            <property name="tabIndent" value="true" />
+            <property name="tabIndent" value="false" />
+            <property name="ignoreIndentationTokens" type="array" value=""/>
         </properties>
     </rule>
 

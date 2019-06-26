@@ -1,4 +1,10 @@
 <?php
-
-$vara = 1;
-    $varb = 2;
+    /**
+    * Block comment
+    */
+if (true) {
+// Line comment
+        $vara = 1;
+        // Line comment
+$varb = 2;
+}
