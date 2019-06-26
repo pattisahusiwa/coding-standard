@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ruleset name="PHPTron">
+<ruleset name="xynha-test">
     <description>Coding standard used on all Xynha PHP Projects</description>
 
     <config name="testVersion" value="5.4"/>
