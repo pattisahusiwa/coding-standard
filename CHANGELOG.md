@@ -12,3 +12,9 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
   - Add class properties spacing rule
   - Add functions spacing rule
   - Add operator spacing rule
+  - Add array declaration rule
+    * No space after `array` keyword
+    * No space in empty array
+    * Single value array must be single line
+    * Align array key and double arrow
+    * Closing parenthesis in multiline array must be in a new line and aligned.

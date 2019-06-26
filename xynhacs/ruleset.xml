@@ -40,4 +40,12 @@
     However, this sniff allows many space before operator.
     -->
     <rule ref="Squiz.WhiteSpace.OperatorSpacing"/>
+
+    <!-- Arrays -->
+    <rule ref="Squiz.Arrays.ArrayDeclaration">
+        <exclude name="Squiz.Arrays.ArrayDeclaration.NoComma"/>
+
+        <!-- Has been handled by Squiz.WhiteSpace.OperatorSpacing -->
+        <exclude name="Squiz.Arrays.ArrayDeclaration.SpaceAfterDoubleArrow"/>
+    </rule>
 </ruleset>
