@@ -13,7 +13,6 @@
     <file>./tests/</file>
 
     <exclude-pattern>./vendor/*</exclude-pattern>
-    <exclude-pattern>./tests/*.inc</exclude-pattern>
 
     <rule ref="./xynhacs/ruleset.xml"/>
 </ruleset>

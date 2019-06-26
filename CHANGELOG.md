@@ -7,7 +7,8 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 ## [Unreleased]
 ### Added
   - Add PSR2 standard
-  - Add rule to fix wrong code identation
-  - Add rule to fix line and block comment identation
-  - Add spacing between class properties
-  - Add spacing between functions
+  - Add code identation rule
+  - Add line and block comment identation rule
+  - Add class properties spacing rule
+  - Add functions spacing rule
+  - Add operator spacing rule

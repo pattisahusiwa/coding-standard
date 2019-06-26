@@ -14,6 +14,7 @@ final class TsWhiteSpace
         $suite->addTestSuite(ScopeIndentTest::class);
         $suite->addTestSuite(MemberVarSpacingTest::class);
         $suite->addTestSuite(FunctionSpacingTest::class);
+        $suite->addTestSuite(OperatorSpacingTest::class);
 
         return $suite;
     }

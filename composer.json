@@ -36,6 +36,7 @@
     "scripts": {
         "compat": "php ./vendor/bin/phpcompatinfo --progress analyser:run ./tests/",
         "test": "php ./vendor/bin/phpunit --bootstrap=\"./tests/bootstrap.php\" --testsuite unit-test",
-        "fix": "./vendor/bin/phpcbf ./tests/ ./xynhacs/"
+        "fix": "./vendor/bin/phpcbf ./tests/ ./xynhacs/",
+        "phpcs": "./vendor/bin/phpcs --standard=./xynhacs/ruleset.xml -s"
     }
 }
