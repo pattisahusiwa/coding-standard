@@ -29,28 +29,28 @@ final class OperatorSpacingTest extends CSAbstractSniffUnitTest
 
     private function noSpaceBefore()
     {
-        $sniff = $this->sniff. '.NoSpaceBefore';
+        $sniff = $this->sniff . '.NoSpaceBefore';
         $message = 'Expected 1 space before "="; 0 found';
         $this->sniffError(3, $sniff, $message);
     }
 
     private function noSpaceAfter()
     {
-        $sniff = $this->sniff. '.NoSpaceAfter';
+        $sniff = $this->sniff . '.NoSpaceAfter';
         $message = 'Expected 1 space after "="; 0 found';
         $this->sniffError(4, $sniff, $message);
     }
 
     private function multiSpacingBefore()
     {
-        $sniff = $this->sniff. '.SpacingBefore';
+        $sniff = $this->sniff . '.SpacingBefore';
         $message = 'Expected 1 space before "+"; 2 found';
         $this->sniffError(5, $sniff, $message);
     }
 
     private function multiSpacingAfter()
     {
-        $sniff = $this->sniff. '.SpacingAfter';
+        $sniff = $this->sniff . '.SpacingAfter';
         $message = 'Expected 1 space after "+"; 2 found';
         $this->sniffError(6, $sniff, $message);
     }
