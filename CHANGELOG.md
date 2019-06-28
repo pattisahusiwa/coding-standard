@@ -19,3 +19,5 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
     * Align array key and double arrow
     * Closing parenthesis in multiline array must be in a new line and aligned
   - Add bracket array spacing rule
+  - Add string rule
+    * Single space around concat operator; allow multiline string.

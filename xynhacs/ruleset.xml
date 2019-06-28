@@ -49,4 +49,12 @@
         <exclude name="Squiz.Arrays.ArrayDeclaration.SpaceAfterDoubleArrow"/>
     </rule>
     <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
+
+    <!-- String -->
+    <rule ref="Squiz.Strings.ConcatenationSpacing">
+        <properties>
+            <property name="spacing" value="1" />
+            <property name="ignoreNewlines" value="true" />
+        </properties>
+    </rule>
 </ruleset>

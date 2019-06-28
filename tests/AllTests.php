@@ -6,6 +6,7 @@ use PHPUnit\Framework\TestSuite;
 
 use XynhaCS\Tests\Sniffs\Arrays\TsArray;
 use XynhaCS\Tests\Sniffs\WhiteSpace\TsWhiteSpace;
+use XynhaCS\Tests\Sniffs\Strings\TsString;
 
 final class AllTests
 {
@@ -19,6 +20,9 @@ final class AllTests
 
         $array = new TsArray();
         $suite->addTest($array->getTestSuite());
+
+        $string = new TsString();
+        $suite->addTest($string->getTestSuite());
 
         return $suite;
     }
