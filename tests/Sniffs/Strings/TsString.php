@@ -13,6 +13,7 @@ final class TsString
 
         $suite->addTestSuite(ConcatenationSpacingTest::class);
         $suite->addTestSuite(DoubleQuoteUsageTest::class);
+        $suite->addTestSuite(EchoedStringsTest::class);
 
         return $suite;
     }

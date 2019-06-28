@@ -18,3 +18,4 @@
   - Add string rule
     * Single space around concat operator; allow multiline string
     * Always use single quotes, except for formatted string
+    * Echoed string should no be bracketed

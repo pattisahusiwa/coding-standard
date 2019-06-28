@@ -6,6 +6,15 @@
 
     <rule ref="PSR2"/>
 
+    <rule ref="Generic.PHP.ForbiddenFunctions">
+        <properties>
+            <property name="error" value="true" />
+            <property name="forbiddenFunctions" type="array">
+                <element key="echo" value="null"/>
+            </property>
+        </properties>
+    </rule>
+
     <!--
     Fix wrong indentation, eq:
       $a = 1;
@@ -58,4 +67,5 @@
         </properties>
     </rule>
     <rule ref="Squiz.Strings.DoubleQuoteUsage"/>
+    <rule ref="Squiz.Strings.EchoedStrings"/>
 </ruleset>
