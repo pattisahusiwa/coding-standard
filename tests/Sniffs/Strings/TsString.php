@@ -12,6 +12,7 @@ final class TsString
         $suite = new TestSuite('XynhaCS_string');
 
         $suite->addTestSuite(ConcatenationSpacingTest::class);
+        $suite->addTestSuite(DoubleQuoteUsageTest::class);
 
         return $suite;
     }

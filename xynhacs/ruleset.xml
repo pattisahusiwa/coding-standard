@@ -57,4 +57,5 @@
             <property name="ignoreNewlines" value="true" />
         </properties>
     </rule>
+    <rule ref="Squiz.Strings.DoubleQuoteUsage"/>
 </ruleset>

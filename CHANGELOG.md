@@ -1,9 +1,5 @@
 # Change Log
 
-All notable changes to this project will be documented in this file.
-This project adheres to [Semantic Versioning](http://semver.org/),
-using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
-
 ## [Unreleased]
 ### Added
   - Add PSR2 standard
@@ -20,4 +16,5 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
     * Closing parenthesis in multiline array must be in a new line and aligned
   - Add bracket array spacing rule
   - Add string rule
-    * Single space around concat operator; allow multiline string.
+    * Single space around concat operator; allow multiline string
+    * Always use single quotes, except for formatted string
