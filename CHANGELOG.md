@@ -6,6 +6,7 @@
   * Code identation rule
   * Line and block comment identation rule
   * Operator spacing rule
+  * Variable cast spacing rule
   * Array rules:
     - No space after `array` keyword
     - No space in empty array
