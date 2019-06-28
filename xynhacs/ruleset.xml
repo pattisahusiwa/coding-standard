@@ -43,11 +43,7 @@
             <property name="spacingAfterLast" value="0" />
         </properties>
     </rule>
-
-    <!--
-    Ensure a space before and after an operator.
-    However, this sniff allows many space before operator.
-    -->
+    <rule ref="Squiz.WhiteSpace.FunctionOpeningBraceSpace"/>
     <rule ref="Squiz.WhiteSpace.OperatorSpacing"/>
 
     <!-- Arrays -->
