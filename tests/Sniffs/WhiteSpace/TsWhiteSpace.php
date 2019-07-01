@@ -18,6 +18,7 @@ final class TsWhiteSpace
         $suite->addTestSuite(FunctionOpeningBraceSpaceTest::class);
         $suite->addTestSuite(CastSpacingTest::class);
         $suite->addTestSuite(LanguageConstructSpacingTest::class);
+        $suite->addTestSuite(LogicalOperatorSpacingTest::class);
 
         return $suite;
     }
