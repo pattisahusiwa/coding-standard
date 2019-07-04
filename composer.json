@@ -3,7 +3,7 @@
     "description": "PHP sniffs for Xynha projects",
     "license": "MIT",
     "type": "phpcodesniffer-standard",
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "authors": [
         {
