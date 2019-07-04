@@ -1,6 +1,8 @@
 # Change Log
 
 ## [Unreleased]
+
+## [0.1.0-alpha] - 2019-07-04
 ### Added
   * PSR2 standard
   * Code identation rule
@@ -27,3 +29,7 @@
     - No blank line after opening brace
   * Class rules:
     - A blank line before and after class properties
+
+
+
+[0.1.0-alpha]: https://github.com/xynha/xynhacs/releases/tag/v0.1.0-alpha
