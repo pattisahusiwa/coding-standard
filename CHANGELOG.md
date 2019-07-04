@@ -9,6 +9,7 @@
   * Variable cast spacing rule
   * Language constructs spacing
   * Logical operator spacing
+  * Object operator spacing
   * Array rules:
     - No space after `array` keyword
     - No space in empty array
