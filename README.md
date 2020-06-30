@@ -1,4 +1,9 @@
 # phpcodeconv - PHP Coding Convention
+
+[![Packagist License](https://img.shields.io/packagist/l/pattisahusiwa/phpcodeconv)](https://github.com/pattisahusiwa/phpcodeconv/blob/master/LICENSE)
+[![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/pattisahusiwa/phpcodeconv)](https://php.net/)
+[![Packagist Version](https://img.shields.io/packagist/v/pattisahusiwa/phpcodeconv?label=latest)](https://github.com/pattisahusiwa/phpcodeconv/releases)
+
 Another PHP Coding Standard for PHP_CodeSniffer
 
 ## Installation
