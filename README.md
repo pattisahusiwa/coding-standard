@@ -1,10 +1,10 @@
-# xynhacs
-Another PHP Coding Standard
+# phpcodeconv - PHP Coding Convention
+Another PHP Coding Standard for PHP_CodeSniffer
 
 ## Installation
 Install with composer
 ```
-composer require --dev xynha/xynhacs
+composer require --dev pattisahusiwa/phpcodeconv
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ Add this content into your `phpcs.xml`
 
   <exclude-pattern>vendor</exclude-pattern>
 
-    <rule ref="xynhacs"/>
+    <rule ref="phpcodeconv"/>
 </ruleset>
 ```
 
@@ -31,4 +31,4 @@ Run `phpcs` to validate your source code style.
 
 
 ## License
-See [license](https://github.com/xynha/xynhacs/blob/master/LICENSE) file.
+See [license](https://github.com/pattisahusiwa/phpcodeconv/blob/master/LICENSE) file.

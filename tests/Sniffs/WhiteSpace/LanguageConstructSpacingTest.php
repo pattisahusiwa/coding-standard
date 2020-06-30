@@ -1,8 +1,8 @@
 <?php
 
-namespace XynhaCS\Tests\Sniffs\WhiteSpace;
+namespace PhpCodeConv\Tests\Sniffs\WhiteSpace;
 
-use XynhaCS\Tests\CSAbstractSniffUnitTest;
+use PhpCodeConv\Tests\CSAbstractSniffUnitTest;
 
 final class LanguageConstructSpacingTest extends CSAbstractSniffUnitTest
 {
@@ -28,14 +28,16 @@ final class LanguageConstructSpacingTest extends CSAbstractSniffUnitTest
     private function noSpace()
     {
         $sniff = $this->sniff . '.Incorrect';
-        $message = 'Language constructs must be followed by a single space; expected "require $blah" but found "require$blah"';
+        $message = 'Language constructs must be followed by a single space; expected' .
+        '"require $blah" but found "require$blah"';
         $this->sniffError(3, $sniff, $message);
     }
 
     private function multipleSpace()
     {
         $sniff = $this->sniff . '.IncorrectSingle';
-        $message = 'Language constructs must be followed by a single space; expected 1 space but found "[30;1m·[0m[30;1m·[0m"';
+        $message = 'Language constructs must be followed by a single space; ' .
+        'expected 1 space but found "[30;1m·[0m[30;1m·[0m"';
         $this->sniffError(4, $sniff, $message);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace XynhaCS\Tests\Sniffs\Strings;
+namespace PhpCodeConv\Tests\Sniffs\Strings;
 
 use PHPUnit\Framework\TestSuite;
 
@@ -9,7 +9,7 @@ final class TsString
 
     public function getTestSuite()
     {
-        $suite = new TestSuite('XynhaCS_string');
+        $suite = new TestSuite('PhpCodeConv_string');
 
         $suite->addTestSuite(ConcatenationSpacingTest::class);
         $suite->addTestSuite(DoubleQuoteUsageTest::class);

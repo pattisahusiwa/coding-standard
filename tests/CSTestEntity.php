@@ -1,6 +1,6 @@
 <?php
 
-namespace XynhaCS\Tests;
+namespace PhpCodeConv\Tests;
 
 final class CSTestEntity
 {

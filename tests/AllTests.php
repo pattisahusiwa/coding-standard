@@ -1,19 +1,19 @@
 <?php
 
-namespace XynhaCS\Tests;
+namespace PhpCodeConv\Tests;
 
 use PHPUnit\Framework\TestSuite;
 
-use XynhaCS\Tests\Sniffs\Arrays\TsArray;
-use XynhaCS\Tests\Sniffs\WhiteSpace\TsWhiteSpace;
-use XynhaCS\Tests\Sniffs\Strings\TsString;
+use PhpCodeConv\Tests\Sniffs\Arrays\TsArray;
+use PhpCodeConv\Tests\Sniffs\WhiteSpace\TsWhiteSpace;
+use PhpCodeConv\Tests\Sniffs\Strings\TsString;
 
 final class AllTests
 {
 
     public static function suite()
     {
-        $suite = new TestSuite('XynhaCS');
+        $suite = new TestSuite('PhpCodeConv');
 
         $ws = new TsWhiteSpace();
         $suite->addTest($ws->getTestSuite());

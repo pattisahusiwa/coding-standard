@@ -1,42 +1,41 @@
 {
-    "name": "xynha/xynhacs",
-    "description": "PHP sniffs for Xynha projects",
+    "name": "pattisahusiwa/phpcodeconv",
+    "description": "Another PHP Coding Standard for PHP_CodeSniffer",
+    "keywords": [
+        "standard",
+        "standards",
+        "phpcs",
+        "coding",
+        "style"
+    ],
     "license": "MIT",
     "type": "phpcodesniffer-standard",
-    "minimum-stability": "stable",
-    "prefer-stable": true,
     "authors": [
         {
             "name": "Asis Pattisahusiwa",
             "email": "asis.pattisahusiwa@gmail.com"
         }
     ],
-    "homepage": "https://github.com/xynha/xynhacs",
+    "homepage": "https://github.com/pattisahusiwa/phpcodeconv",
     "support": {
-        "issues": "https://github.com/xynha/xynhacs/issues"
+        "issues": "https://github.com/pattisahusiwa/phpcodeconv/issues"
     },
-    "autoload-dev": {
-        "psr-4": {
-            "XynhaCS\\Tests\\": "./tests/"
-        }
-    },
-    "require": {
-        "php": ">=5.5.0"
-    },
-    "require-dev": {
-        "bartlett/php-compatinfo": "^5.2",
-        "phpunit/phpunit": "^6.5",
-        "squizlabs/php_codesniffer": "^3.4"
-    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
     "config": {
-        "optimize-autoloader": true,
         "preferred-install": "dist",
         "sort-packages": true
     },
-    "scripts": {
-        "compat": "php ./vendor/bin/phpcompatinfo --progress analyser:run ./tests/",
-        "test": "php ./vendor/bin/phpunit --bootstrap=\"./tests/bootstrap.php\" --testsuite unit-test",
-        "fix": "./vendor/bin/phpcbf ./tests/ ./xynhacs/",
-        "phpcs": "./vendor/bin/phpcs --standard=./xynhacs/ruleset.xml -s"
+    "autoload-dev": {
+        "psr-4": {
+            "PhpCodeConv\\Tests\\": "tests"
+        }
+    },
+    "require": {
+        "php": ">=5.5.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
     }
 }

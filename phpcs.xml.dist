@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset>
+  <config name="testVersion" value="5.4"/>
+
+  <arg name="colors"/>
+  <arg name="parallel" value="8"/>
+  <arg value="psv"/>
+  <arg name="extensions" value="php"/>
+
+  <file>phpcodeconv</file>
+  <file>tests</file>
+
+  <exclude-pattern>vendor</exclude-pattern>
+  <exclude-pattern>tests/Inc</exclude-pattern>
+
+  <rule ref="phpcodeconv/ruleset.xml"/>
+</ruleset>

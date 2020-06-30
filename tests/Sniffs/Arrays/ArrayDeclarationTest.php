@@ -1,8 +1,8 @@
 <?php
 
-namespace XynhaCS\Tests\Sniffs\Arrays;
+namespace PhpCodeConv\Tests\Sniffs\Arrays;
 
-use XynhaCS\Tests\CSAbstractSniffUnitTest;
+use PhpCodeConv\Tests\CSAbstractSniffUnitTest;
 
 final class ArrayDeclarationTest extends CSAbstractSniffUnitTest
 {

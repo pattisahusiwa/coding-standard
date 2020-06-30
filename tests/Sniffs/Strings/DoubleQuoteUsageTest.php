@@ -1,8 +1,8 @@
 <?php
 
-namespace XynhaCS\Tests\Sniffs\Strings;
+namespace PhpCodeConv\Tests\Sniffs\Strings;
 
-use XynhaCS\Tests\CSAbstractSniffUnitTest;
+use PhpCodeConv\Tests\CSAbstractSniffUnitTest;
 
 final class DoubleQuoteUsageTest extends CSAbstractSniffUnitTest
 {

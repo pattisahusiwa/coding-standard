@@ -1,12 +1,12 @@
 <?php
 
-namespace XynhaCS\Tests;
+namespace PhpCodeConv\Tests;
 
 use PHPUnit\Framework\TestCase;
 use PHP_CodeSniffer\Config;
 use PHP_CodeSniffer\Ruleset;
 use PHP_CodeSniffer\Files\DummyFile;
-use XynhaCS\Tests\CSTestEntity;
+use PhpCodeConv\Tests\CSTestEntity;
 
 abstract class CSAbstractSniffUnitTest extends TestCase
 {
@@ -44,8 +44,6 @@ abstract class CSAbstractSniffUnitTest extends TestCase
                     );
                 }
             }
-            // var_dump($this->errors);
-            // print_r($this->errors);
         }
 
         if (empty($this->warnings) === false) {

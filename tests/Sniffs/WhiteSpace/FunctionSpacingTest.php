@@ -1,8 +1,8 @@
 <?php
 
-namespace XynhaCS\Tests\Sniffs\WhiteSpace;
+namespace PhpCodeConv\Tests\Sniffs\WhiteSpace;
 
-use XynhaCS\Tests\CSAbstractSniffUnitTest;
+use PhpCodeConv\Tests\CSAbstractSniffUnitTest;
 
 final class FunctionSpacingTest extends CSAbstractSniffUnitTest
 {

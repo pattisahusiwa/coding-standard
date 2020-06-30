@@ -1,6 +1,6 @@
 <?php
 
-namespace XynhaCS\Tests\Sniffs\Arrays;
+namespace PhpCodeConv\Tests\Sniffs\Arrays;
 
 use PHPUnit\Framework\TestSuite;
 
@@ -9,7 +9,7 @@ final class TsArray
 
     public function getTestSuite()
     {
-        $suite = new TestSuite('XynhaCS_array');
+        $suite = new TestSuite('PhpCodeConv_array');
 
         $suite->addTestSuite(ArrayDeclarationTest::class);
         $suite->addTestSuite(ArrayBracketSpacingTest::class);

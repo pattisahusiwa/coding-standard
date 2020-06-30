@@ -1,6 +1,6 @@
 <?php
 
-namespace XynhaCS\Tests\Sniffs\WhiteSpace;
+namespace PhpCodeConv\Tests\Sniffs\WhiteSpace;
 
 use PHPUnit\Framework\TestSuite;
 
@@ -9,7 +9,7 @@ final class TsWhiteSpace
 
     public function getTestSuite()
     {
-        $suite = new TestSuite('XynhaCS_Spacing');
+        $suite = new TestSuite('PhpCodeConv_Spacing');
 
         $suite->addTestSuite(ScopeIndentTest::class);
         $suite->addTestSuite(MemberVarSpacingTest::class);
