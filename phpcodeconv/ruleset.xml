@@ -4,6 +4,11 @@
 
   <arg name="tab-width" value="4"/>
 
+  <!-- Don't hide tokenizer exceptions -->
+  <rule ref="Internal.Tokenizer.Exception">
+    <type>error</type>
+  </rule>
+
   <rule ref="PSR2"/>
 
   <rule ref="Generic.PHP.ForbiddenFunctions">
