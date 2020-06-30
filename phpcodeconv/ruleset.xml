@@ -11,6 +11,8 @@
 
   <rule ref="PSR2"/>
 
+  <rule ref="Generic.PHP.RequireStrictTypes"/>
+
   <rule ref="Generic.PHP.ForbiddenFunctions">
     <properties>
       <property name="error" value="true" />
