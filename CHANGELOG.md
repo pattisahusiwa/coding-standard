@@ -2,7 +2,12 @@
 
 ## [Unreleased]
 
-## [0.1.0-alpha] - 2019-07-04
+## [0.1] - 2020-06-30
+### Added
+  - All PHP files should be declared as `strict_types`
+  - Add `Internal.Tokenizer.Exception`
+
+## [0.1-alpha] - 2019-07-04
 ### Added
   * PSR2 standard
   * Code identation rule
