@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace PhpCodeConv\Tests\Sniffs\WhiteSpace;
 
@@ -7,18 +7,20 @@ use PhpCodeConv\Tests\CSAbstractSniffUnitTest;
 final class OperatorSpacingTest extends CSAbstractSniffUnitTest
 {
 
+    /** @var string */
     private $sniff = 'Squiz.WhiteSpace.OperatorSpacing';
 
-    protected function getSniffs()
+    protected function getSniffs() : string
     {
         return $this->sniff;
     }
 
-    protected function getTestFile()
+    protected function getTestFile() : string
     {
-        return 'WhiteSpace' . DIRECTORY_SEPARATOR . 'OperatorSpacing';
+        return 'WhiteSpace/OperatorSpacing';
     }
 
+    /** @return void */
     public function testOperatorSpacing()
     {
         $this->noSpaceBefore();
@@ -27,6 +29,7 @@ final class OperatorSpacingTest extends CSAbstractSniffUnitTest
         $this->multiSpacingAfter();
     }
 
+    /** @return void */
     private function noSpaceBefore()
     {
         $sniff = $this->sniff . '.NoSpaceBefore';
@@ -34,6 +37,7 @@ final class OperatorSpacingTest extends CSAbstractSniffUnitTest
         $this->sniffError(3, $sniff, $message);
     }
 
+    /** @return void */
     private function noSpaceAfter()
     {
         $sniff = $this->sniff . '.NoSpaceAfter';
@@ -41,6 +45,7 @@ final class OperatorSpacingTest extends CSAbstractSniffUnitTest
         $this->sniffError(4, $sniff, $message);
     }
 
+    /** @return void */
     private function multiSpacingBefore()
     {
         $sniff = $this->sniff . '.SpacingBefore';
@@ -48,6 +53,7 @@ final class OperatorSpacingTest extends CSAbstractSniffUnitTest
         $this->sniffError(5, $sniff, $message);
     }
 
+    /** @return void */
     private function multiSpacingAfter()
     {
         $sniff = $this->sniff . '.SpacingAfter';

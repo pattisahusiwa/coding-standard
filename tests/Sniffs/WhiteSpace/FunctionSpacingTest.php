@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace PhpCodeConv\Tests\Sniffs\WhiteSpace;
 
@@ -7,18 +7,20 @@ use PhpCodeConv\Tests\CSAbstractSniffUnitTest;
 final class FunctionSpacingTest extends CSAbstractSniffUnitTest
 {
 
+    /** @var string */
     private $sniff = 'Squiz.WhiteSpace.FunctionSpacing';
 
-    protected function getSniffs()
+    protected function getSniffs() : string
     {
         return $this->sniff;
     }
 
-    protected function getTestFile()
+    protected function getTestFile() : string
     {
-        return 'WhiteSpace' . DIRECTORY_SEPARATOR . 'FunctionSpacing';
+        return 'WhiteSpace/FunctionSpacing';
     }
 
+    /** @return void */
     public function testClassFunctionSpacing()
     {
         $this->spacingBefore();
@@ -28,6 +30,7 @@ final class FunctionSpacingTest extends CSAbstractSniffUnitTest
         $this->globalSpacingAfter();
     }
 
+    /** @return void */
     private function spacingBefore()
     {
         $sniff = $this->sniff . '.Before';
@@ -35,6 +38,7 @@ final class FunctionSpacingTest extends CSAbstractSniffUnitTest
         $this->sniffError(6, $sniff, $message);
     }
 
+    /** @return void */
     private function spacingAfter()
     {
         $sniff = $this->sniff . '.After';
@@ -42,6 +46,7 @@ final class FunctionSpacingTest extends CSAbstractSniffUnitTest
         $this->sniffError(8, $sniff, $message);
     }
 
+    /** @return void */
     private function spacingBeforeLast()
     {
         $sniff = $this->sniff . '.AfterLast';
@@ -49,6 +54,7 @@ final class FunctionSpacingTest extends CSAbstractSniffUnitTest
         $this->sniffError(13, $sniff, $message);
     }
 
+    /** @return void */
     private function globalSpacingBefore()
     {
         $sniff = $this->sniff . '.Before';
@@ -56,6 +62,7 @@ final class FunctionSpacingTest extends CSAbstractSniffUnitTest
         $this->sniffError(20, $sniff, $message);
     }
 
+    /** @return void */
     private function globalSpacingAfter()
     {
         $sniff = $this->sniff . '.After';

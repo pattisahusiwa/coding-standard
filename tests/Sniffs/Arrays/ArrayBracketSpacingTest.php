@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace PhpCodeConv\Tests\Sniffs\Arrays;
 
@@ -7,18 +7,20 @@ use PhpCodeConv\Tests\CSAbstractSniffUnitTest;
 final class ArrayBracketSpacingTest extends CSAbstractSniffUnitTest
 {
 
+    /** @var string */
     private $sniff = 'Squiz.Arrays.ArrayBracketSpacing';
 
-    protected function getSniffs()
+    protected function getSniffs() : string
     {
         return $this->sniff;
     }
 
-    protected function getTestFile()
+    protected function getTestFile() : string
     {
-        return 'Arrays' . DIRECTORY_SEPARATOR . 'ArrayBracketSpacing';
+        return 'Arrays/ArrayBracketSpacing';
     }
 
+    /** @return void */
     public function testBracketSpacing()
     {
         $this->noSpaceBetweenVarNameAndBracket();
@@ -26,6 +28,7 @@ final class ArrayBracketSpacingTest extends CSAbstractSniffUnitTest
         $this->spaceBeforeCloseBracket();
     }
 
+    /** @return void */
     private function noSpaceBetweenVarNameAndBracket()
     {
         $sniff = $this->sniff . '.SpaceBeforeBracket';
@@ -33,6 +36,7 @@ final class ArrayBracketSpacingTest extends CSAbstractSniffUnitTest
         $this->sniffError(2, $sniff, $message);
     }
 
+    /** @return void */
     private function spaceAfterOpenBracket()
     {
         $sniff = $this->sniff . '.SpaceAfterBracket';
@@ -40,6 +44,7 @@ final class ArrayBracketSpacingTest extends CSAbstractSniffUnitTest
         $this->sniffError(3, $sniff, $message);
     }
 
+    /** @return void */
     private function spaceBeforeCloseBracket()
     {
         $sniff = $this->sniff . '.SpaceBeforeBracket';

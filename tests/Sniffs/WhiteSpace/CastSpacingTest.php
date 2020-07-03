@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace PhpCodeConv\Tests\Sniffs\WhiteSpace;
 
@@ -7,18 +7,20 @@ use PhpCodeConv\Tests\CSAbstractSniffUnitTest;
 final class CastSpacingTest extends CSAbstractSniffUnitTest
 {
 
+    /** @var string */
     private $sniff = 'Squiz.WhiteSpace.CastSpacing';
 
-    protected function getSniffs()
+    protected function getSniffs() : string
     {
         return $this->sniff;
     }
 
-    protected function getTestFile()
+    protected function getTestFile() : string
     {
-        return 'WhiteSpace' . DIRECTORY_SEPARATOR . 'CastSpacing';
+        return 'WhiteSpace/CastSpacing';
     }
 
+    /** @return void */
     public function testCastSpacing()
     {
         $sniff = $this->sniff . '.ContainsWhiteSpace';

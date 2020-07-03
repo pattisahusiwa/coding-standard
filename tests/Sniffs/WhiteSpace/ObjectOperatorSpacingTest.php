@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace PhpCodeConv\Tests\Sniffs\WhiteSpace;
 
@@ -7,18 +7,20 @@ use PhpCodeConv\Tests\CSAbstractSniffUnitTest;
 final class ObjectOperatorSpacingTest extends CSAbstractSniffUnitTest
 {
 
+    /** @var string */
     private $sniff = 'Squiz.WhiteSpace.ObjectOperatorSpacing';
 
-    protected function getSniffs()
+    protected function getSniffs() : string
     {
         return $this->sniff;
     }
 
-    protected function getTestFile()
+    protected function getTestFile() : string
     {
-        return 'WhiteSpace' . DIRECTORY_SEPARATOR . 'ObjectOperatorSpacing';
+        return 'WhiteSpace/ObjectOperatorSpacing';
     }
 
+    /** @return void */
     public function testLogicalOperatorSpacing()
     {
         $this->spaceBeforeArrow();
@@ -27,6 +29,7 @@ final class ObjectOperatorSpacingTest extends CSAbstractSniffUnitTest
         $this->spaceAfterColon();
     }
 
+    /** @return void */
     private function spaceBeforeArrow()
     {
         $sniff = $this->sniff . '.Before';
@@ -34,6 +37,7 @@ final class ObjectOperatorSpacingTest extends CSAbstractSniffUnitTest
         $this->sniffError(3, $sniff, $message);
     }
 
+    /** @return void */
     private function spaceAfterArrow()
     {
         $sniff = $this->sniff . '.After';
@@ -41,6 +45,7 @@ final class ObjectOperatorSpacingTest extends CSAbstractSniffUnitTest
         $this->sniffError(4, $sniff, $message);
     }
 
+    /** @return void */
     private function spaceBeforeColon()
     {
         $sniff = $this->sniff . '.Before';
@@ -48,6 +53,7 @@ final class ObjectOperatorSpacingTest extends CSAbstractSniffUnitTest
         $this->sniffError(6, $sniff, $message);
     }
 
+    /** @return void */
     private function spaceAfterColon()
     {
         $sniff = $this->sniff . '.After';

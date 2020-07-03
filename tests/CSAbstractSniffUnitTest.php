@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace PhpCodeConv\Tests;
 
@@ -11,28 +11,32 @@ use PhpCodeConv\Tests\CSTestEntity;
 abstract class CSAbstractSniffUnitTest extends TestCase
 {
 
-    private $incDir;
+    // private $incDir;
 
-    /** @var CSTestEntity[] */
+    /** @var array<int,array<int,CSTestEntity>> */
     private $errors = array();
 
-    /** @var CSTestEntity[] */
+    /** @var array<int,array<int,CSTestEntity>> */
     private $warnings = array();
 
+    /** @return string */
     abstract protected function getTestFile();
 
+    /** @return string */
     abstract protected function getSniffs();
 
+    /** @return void */
     final public function setUp()
     {
-        $this->incDir = __DIR__ . DIRECTORY_SEPARATOR . 'Inc' . DIRECTORY_SEPARATOR;
-        $this->setFile($this->incDir . $this->getTestFile() . '.inc');
+        $this->setFile(__DIR__ . '/Inc/' . $this->getTestFile() . '.inc');
     }
 
+    /** @return void */
     final public function tearDown()
     {
         if (empty($this->errors) === false) {
             print("\n");
+
             foreach ($this->errors as $errorLine) {
                 foreach ($errorLine as $error) {
                     printf(
@@ -50,17 +54,19 @@ abstract class CSAbstractSniffUnitTest extends TestCase
             var_dump($this->warnings);
         }
 
-        unset($this->incDir);
+        // unset($this->incDir);
         unset($this->errors);
         unset($this->warnings);
     }
 
-    final protected function sniffError($lineNum, $source, $message)
+    /** @return void */
+    final protected function sniffError(int $lineNum, string $source, string $message)
     {
         if (array_key_exists($lineNum, $this->errors) === false) {
             $this->fail('No error found on line ' . $lineNum);
         }
 
+        /** @var array<int,CSTestEntity> $lineErrors */
         $lineErrors = $this->errors[$lineNum];
 
         /** @var CSTestEntity $entity */
@@ -72,20 +78,22 @@ abstract class CSAbstractSniffUnitTest extends TestCase
                     unset($this->errors[$lineNum]);
                 }
 
-                return $this->assertEquals($message, $entity->getMessage());
+                $this->assertEquals($message, $entity->getMessage());
+                return;
             }
         }
 
-        return $this->fail($source . ' is not found on line ' . $lineNum);
+        $this->fail($source . ' is not found on line ' . $lineNum);
     }
 
-    private function setFile($filename)
+    /** @return void */
+    private function setFile(string $filename)
     {
         if (file_exists($filename) === false) {
             $this->fail('Can not load ' . $filename);
         }
 
-        $content = file_get_contents($filename);
+        $content = (string)file_get_contents($filename);
         $config = new Config();
         $ruleSet = new Ruleset($config);
 
@@ -95,7 +103,11 @@ abstract class CSAbstractSniffUnitTest extends TestCase
         $this->warnings = $this->filterSniff($this->getSniffs(), $file->getWarnings());
     }
 
-    private function filterSniff($sniff, array $haystack)
+    /**
+     * @param array<string,string>[][][] $haystack
+     * @return CSTestEntity[][]
+     */
+    private function filterSniff(string $sniff, array $haystack) : array
     {
         $result = array();
         foreach ($haystack as $line => $lines) {

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace PhpCodeConv\Tests\Sniffs\WhiteSpace;
 
@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestSuite;
 final class TsWhiteSpace
 {
 
-    public function getTestSuite()
+    public function getTestSuite() : TestSuite
     {
         $suite = new TestSuite('PhpCodeConv_Spacing');
 

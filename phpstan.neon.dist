@@ -1,0 +1,14 @@
+parameters:
+    level: max
+    paths:
+        - phpcodeconv
+        - tests
+
+    excludes_analyse:
+        - tests/Inc/*
+
+    bootstrapFiles:
+        - tests/bootstrap.php
+
+    # Miscellaneous parameters
+    inferPrivatePropertyTypeFromConstructor: true

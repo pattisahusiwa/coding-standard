@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace PhpCodeConv\Tests;
 
@@ -9,11 +9,14 @@ final class CSTestEntity
 
     private $column;
 
+    /** @var string */
     private $source;
 
+    /** @var string */
     private $message;
 
-    public function __construct($line, $column, array $error)
+    /** @param string[] $error */
+    public function __construct(int $line, int $column, array $error)
     {
         $this->line = $line;
         $this->column = $column;
@@ -21,22 +24,22 @@ final class CSTestEntity
         $this->message = $error['message'];
     }
 
-    public function getLine()
+    public function getLine() : int
     {
         return $this->line;
     }
 
-    public function getColumn()
+    public function getColumn() : int
     {
         return $this->column;
     }
 
-    public function getSource()
+    public function getSource() : string
     {
         return $this->source;
     }
 
-    public function getMessage()
+    public function getMessage() : string
     {
         return $this->message;
     }

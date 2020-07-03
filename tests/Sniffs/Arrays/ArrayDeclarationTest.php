@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace PhpCodeConv\Tests\Sniffs\Arrays;
 
@@ -7,18 +7,20 @@ use PhpCodeConv\Tests\CSAbstractSniffUnitTest;
 final class ArrayDeclarationTest extends CSAbstractSniffUnitTest
 {
 
+    /** @var string */
     private $sniff = 'Squiz.Arrays.ArrayDeclaration';
 
-    protected function getSniffs()
+    protected function getSniffs() : string
     {
         return $this->sniff;
     }
 
-    protected function getTestFile()
+    protected function getTestFile() : string
     {
-        return 'Arrays' . DIRECTORY_SEPARATOR . 'ArrayDeclaration';
+        return 'Arrays/ArrayDeclaration';
     }
 
+    /** @return void */
     public function testArrayDeclaration()
     {
         $this->spaceAfterKeyword();
@@ -31,6 +33,7 @@ final class ArrayDeclarationTest extends CSAbstractSniffUnitTest
         $this->closeBraceNewline();
     }
 
+    /** @return void */
     private function spaceAfterKeyword()
     {
         $sniff = $this->sniff . '.SpaceAfterKeyword';
@@ -38,6 +41,7 @@ final class ArrayDeclarationTest extends CSAbstractSniffUnitTest
         $this->sniffError(3, $sniff, $message);
     }
 
+    /** @return void */
     private function spaceInEmptyArray()
     {
         $sniff = $this->sniff . '.SpaceInEmptyArray';
@@ -45,6 +49,7 @@ final class ArrayDeclarationTest extends CSAbstractSniffUnitTest
         $this->sniffError(5, $sniff, $message);
     }
 
+    /** @return void */
     private function singleValueMultiline()
     {
         $sniff = $this->sniff . '.MultiLineNotAllowed';
@@ -52,6 +57,7 @@ final class ArrayDeclarationTest extends CSAbstractSniffUnitTest
         $this->sniffError(7, $sniff, $message);
     }
 
+    /** @return void */
     private function closeBraceNotAligned()
     {
         $sniff = $this->sniff . '.CloseBraceNotAligned';
@@ -59,6 +65,7 @@ final class ArrayDeclarationTest extends CSAbstractSniffUnitTest
         $this->sniffError(9, $sniff, $message);
     }
 
+    /** @return void */
     private function inlineArraySpaceBeforeDoubleArrow()
     {
         $sniff = $this->sniff . '.SpaceBeforeDoubleArrow';
@@ -66,6 +73,7 @@ final class ArrayDeclarationTest extends CSAbstractSniffUnitTest
         $this->sniffError(11, $sniff, $message);
     }
 
+    /** @return void */
     private function keyNotAligned()
     {
         $sniff = $this->sniff . '.KeyNotAligned';
@@ -73,6 +81,7 @@ final class ArrayDeclarationTest extends CSAbstractSniffUnitTest
         $this->sniffError(14, $sniff, $message);
     }
 
+    /** @return void */
     private function doubleArrowNotAligned()
     {
         $sniff = $this->sniff . '.DoubleArrowNotAligned';
@@ -80,6 +89,7 @@ final class ArrayDeclarationTest extends CSAbstractSniffUnitTest
         $this->sniffError(14, $sniff, $message);
     }
 
+    /** @return void */
     private function closeBraceNewline()
     {
         $sniff = $this->sniff . '.CloseBraceNewLine';

@@ -1,6 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
-$root = dirname(__DIR__);
-
-require_once implode(DIRECTORY_SEPARATOR, [$root, 'vendor', 'autoload.php']);
-require_once implode(DIRECTORY_SEPARATOR, [$root, 'vendor', 'squizlabs', 'php_codesniffer', 'tests', 'bootstrap.php']);
+require_once dirname(__DIR__) . '/vendor/autoload.php';
+require_once dirname(__DIR__) . '/vendor/squizlabs/php_codesniffer/tests/bootstrap.php';

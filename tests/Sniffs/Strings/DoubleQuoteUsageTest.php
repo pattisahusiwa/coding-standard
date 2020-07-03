@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace PhpCodeConv\Tests\Sniffs\Strings;
 
@@ -7,24 +7,27 @@ use PhpCodeConv\Tests\CSAbstractSniffUnitTest;
 final class DoubleQuoteUsageTest extends CSAbstractSniffUnitTest
 {
 
+    /** @var string */
     private $sniff = 'Squiz.Strings.DoubleQuoteUsage';
 
-    protected function getSniffs()
+    protected function getSniffs() : string
     {
         return $this->sniff;
     }
 
-    protected function getTestFile()
+    protected function getTestFile(): string
     {
-        return 'Strings' . DIRECTORY_SEPARATOR . 'DoubleQuoteUsage';
+        return 'Strings/DoubleQuoteUsage';
     }
 
+    /** @return void */
     public function testDoubleQuote()
     {
         $this->useSingleQuote();
         $this->containsVar();
     }
 
+    /** @return void */
     private function useSingleQuote()
     {
         $sniff = $this->sniff . '.NotRequired';
@@ -32,6 +35,7 @@ final class DoubleQuoteUsageTest extends CSAbstractSniffUnitTest
         $this->sniffError(3, $sniff, $message);
     }
 
+    /** @return void */
     private function containsVar()
     {
         $sniff = $this->sniff . '.ContainsVar';

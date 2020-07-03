@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit colors="true" verbose="false" debug="false" processIsolation="false"
-    convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true"
-    stopOnFailure="false"
-    forceCoversAnnotation="false"
-    mapTestClassNameToCoveredClassName="false"
-    cacheTokens="false"
-    backupGlobals="false"
-    backupStaticAttributes="false">
+<phpunit colors="true" bootstrap="tests/bootstrap.php" verbose="false" debug="false" processIsolation="false" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" stopOnFailure="false" forceCoversAnnotation="false" mapTestClassNameToCoveredClassName="false" cacheTokens="false" backupGlobals="false" backupStaticAttributes="false">
 
-    <testsuites>
-        <testsuite name="unit-test">
-            <file>./tests/AllTests.php</file>
-        </testsuite>
-    </testsuites>
+  <testsuites>
+    <testsuite name="alltest">
+      <file>tests/AllTests.php</file>
+    </testsuite>
+  </testsuites>
 </phpunit>

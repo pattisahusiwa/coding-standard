@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace PhpCodeConv\Tests\Sniffs\Strings;
 
@@ -7,23 +7,26 @@ use PhpCodeConv\Tests\CSAbstractSniffUnitTest;
 final class EchoedStringsTest extends CSAbstractSniffUnitTest
 {
 
+    /** @var string */
     private $sniff = 'Squiz.Strings.EchoedStrings';
 
-    protected function getSniffs()
+    protected function getSniffs() : string
     {
         return $this->sniff;
     }
 
-    protected function getTestFile()
+    protected function getTestFile() : string
     {
-        return 'Strings' . DIRECTORY_SEPARATOR . 'EchoedStrings';
+        return 'Strings/EchoedStrings';
     }
 
+    /** @return void */
     public function testEchoedString()
     {
         $this->noBracket();
     }
 
+    /** @return void */
     private function noBracket()
     {
         $sniff = $this->sniff . '.HasBracket';

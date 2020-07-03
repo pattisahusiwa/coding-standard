@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace PhpCodeConv\Tests\Sniffs\Strings;
 
@@ -7,23 +7,26 @@ use PhpCodeConv\Tests\CSAbstractSniffUnitTest;
 final class ConcatenationSpacingTest extends CSAbstractSniffUnitTest
 {
 
+    /** @var string */
     private $sniff = 'Squiz.Strings.ConcatenationSpacing';
 
-    protected function getSniffs()
+    protected function getSniffs() : string
     {
         return $this->sniff;
     }
 
-    protected function getTestFile()
+    protected function getTestFile() : string
     {
-        return 'Strings' . DIRECTORY_SEPARATOR . 'ConcatenationSpacing';
+        return 'Strings/ConcatenationSpacing';
     }
 
+    /** @return void */
     public function testConcatOperatorPadding()
     {
         $this->noSpaceBefore();
     }
 
+    /** @return void */
     private function noSpaceBefore()
     {
         $sniff = $this->sniff . '.PaddingFound';

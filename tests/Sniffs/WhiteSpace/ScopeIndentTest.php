@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace PhpCodeConv\Tests\Sniffs\WhiteSpace;
 
@@ -7,18 +7,20 @@ use PhpCodeConv\Tests\CSAbstractSniffUnitTest;
 final class ScopeIndentTest extends CSAbstractSniffUnitTest
 {
 
+    /** @var string */
     private $sniff = 'Generic.WhiteSpace.ScopeIndent';
 
-    protected function getSniffs()
+    protected function getSniffs() : string
     {
         return $this->sniff;
     }
 
-    protected function getTestFile()
+    protected function getTestFile() : string
     {
-        return 'WhiteSpace' . DIRECTORY_SEPARATOR . 'ScopeIndent';
+        return 'WhiteSpace/ScopeIndent';
     }
 
+    /** @return void */
     public function testIncorrectExactIdentation()
     {
         $this->blockComment();
@@ -28,6 +30,7 @@ final class ScopeIndentTest extends CSAbstractSniffUnitTest
         $this->codeAfter();
     }
 
+    /** @return void */
     private function blockComment()
     {
         $sniff = $this->sniff . '.IncorrectExact';
@@ -35,6 +38,7 @@ final class ScopeIndentTest extends CSAbstractSniffUnitTest
         $this->sniffError(2, $sniff, $message);
     }
 
+    /** @return void */
     private function commentBefore()
     {
         $sniff = $this->sniff . '.IncorrectExact';
@@ -42,6 +46,7 @@ final class ScopeIndentTest extends CSAbstractSniffUnitTest
         $this->sniffError(6, $sniff, $message);
     }
 
+    /** @return void */
     private function codeBefore()
     {
         $sniff = $this->sniff . '.IncorrectExact';
@@ -49,6 +54,7 @@ final class ScopeIndentTest extends CSAbstractSniffUnitTest
         $this->sniffError(9, $sniff, $message);
     }
 
+    /** @return void */
     private function commentAfter()
     {
         $sniff = $this->sniff . '.IncorrectExact';
@@ -56,6 +62,7 @@ final class ScopeIndentTest extends CSAbstractSniffUnitTest
         $this->sniffError(7, $sniff, $message);
     }
 
+    /** @return void */
     private function codeAfter()
     {
         $sniff = $this->sniff . '.IncorrectExact';
