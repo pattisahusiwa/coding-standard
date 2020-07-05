@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 class Test
 {
@@ -22,4 +22,4 @@ function testA()
 function testB()
 {}
 
-echo 'test';
+$a = new stdClass();

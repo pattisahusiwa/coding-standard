@@ -2,9 +2,9 @@
 
 namespace PhpCodeConv\Tests\Sniffs\WhiteSpace;
 
-use PhpCodeConv\Tests\CSAbstractSniffUnitTest;
+use PhpCodeConv\Tests\Sniffs\AbstractTestCase;
 
-final class FunctionSpacingTest extends CSAbstractSniffUnitTest
+final class FunctionSpacingTest extends AbstractTestCase
 {
 
     /** @var string */
@@ -15,58 +15,59 @@ final class FunctionSpacingTest extends CSAbstractSniffUnitTest
         return $this->sniff;
     }
 
-    protected function getTestFile() : string
+    protected function getFilename() : string
     {
-        return 'WhiteSpace/FunctionSpacing';
+        return 'WhiteSpace/FunctionSpacing.inc';
+    }
+
+    /** @return string[] */
+    protected function getExcludeSniff() : array
+    {
+        return [
+                'PSR2.Classes.ClassDeclaration.CloseBraceAfterBody',
+                'PSR1.Classes.ClassDeclaration.MissingNamespace',
+                'Squiz.WhiteSpace.MemberVarSpacing.FirstIncorrect',
+                'Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore',
+               ];
     }
 
     /** @return void */
-    public function testClassFunctionSpacing()
-    {
-        $this->spacingBefore();
-        $this->spacingAfter();
-        $this->spacingBeforeLast();
-        $this->globalSpacingBefore();
-        $this->globalSpacingAfter();
-    }
-
-    /** @return void */
-    private function spacingBefore()
+    public function testSpacingBefore()
     {
         $sniff = $this->sniff . '.Before';
         $message = 'Expected 1 blank line before function; 0 found';
-        $this->sniffError(6, $sniff, $message);
+        $this->checkSniff(6, 12, $sniff, $message);
     }
 
     /** @return void */
-    private function spacingAfter()
+    public function testSpacingAfter()
     {
         $sniff = $this->sniff . '.After';
         $message = 'Expected 1 blank line after function; 2 found';
-        $this->sniffError(8, $sniff, $message);
+        $this->checkSniff(8, 5, $sniff, $message);
     }
 
     /** @return void */
-    private function spacingBeforeLast()
+    public function testSpacingBeforeLast()
     {
         $sniff = $this->sniff . '.AfterLast';
         $message = 'Expected 0 blank lines after function; 3 found';
-        $this->sniffError(13, $sniff, $message);
+        $this->checkSniff(13, 5, $sniff, $message);
     }
 
     /** @return void */
-    private function globalSpacingBefore()
+    public function testGlobalSpacingBefore()
     {
         $sniff = $this->sniff . '.Before';
         $message = 'Expected 1 blank line before function; 2 found';
-        $this->sniffError(20, $sniff, $message);
+        $this->checkSniff(20, 1, $sniff, $message);
     }
 
     /** @return void */
-    private function globalSpacingAfter()
+    public function testGlobalSpacingAfter()
     {
         $sniff = $this->sniff . '.After';
         $message = 'Expected 1 blank line after function; 0 found';
-        $this->sniffError(21, $sniff, $message);
+        $this->checkSniff(21, 2, $sniff, $message);
     }
 }

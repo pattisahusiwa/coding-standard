@@ -2,35 +2,29 @@
 
 namespace PhpCodeConv\Tests\Sniffs\Strings;
 
-use PhpCodeConv\Tests\CSAbstractSniffUnitTest;
+use PhpCodeConv\Tests\Sniffs\AbstractTestCase;
 
-final class EchoedStringsTest extends CSAbstractSniffUnitTest
+final class EchoedStringsTest extends AbstractTestCase
 {
 
     /** @var string */
     private $sniff = 'Squiz.Strings.EchoedStrings';
 
-    protected function getSniffs() : string
+    protected function getFilename() : string
     {
-        return $this->sniff;
+        return 'Strings/EchoedStrings.inc';
     }
 
-    protected function getTestFile() : string
+    protected function getExcludeSniff() : array
     {
-        return 'Strings/EchoedStrings';
-    }
-
-    /** @return void */
-    public function testEchoedString()
-    {
-        $this->noBracket();
+        return ['Generic.PHP.ForbiddenFunctions.Found'];
     }
 
     /** @return void */
-    private function noBracket()
+    public function testEchoNoBracket()
     {
         $sniff = $this->sniff . '.HasBracket';
         $message = 'Echoed strings should not be bracketed';
-        $this->sniffError(3, $sniff, $message);
+        $this->checkSniff(3, 1, $sniff, $message);
     }
 }

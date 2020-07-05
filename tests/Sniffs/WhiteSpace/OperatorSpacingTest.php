@@ -2,9 +2,9 @@
 
 namespace PhpCodeConv\Tests\Sniffs\WhiteSpace;
 
-use PhpCodeConv\Tests\CSAbstractSniffUnitTest;
+use PhpCodeConv\Tests\Sniffs\AbstractTestCase;
 
-final class OperatorSpacingTest extends CSAbstractSniffUnitTest
+final class OperatorSpacingTest extends AbstractTestCase
 {
 
     /** @var string */
@@ -15,49 +15,40 @@ final class OperatorSpacingTest extends CSAbstractSniffUnitTest
         return $this->sniff;
     }
 
-    protected function getTestFile() : string
+    protected function getFilename() : string
     {
-        return 'WhiteSpace/OperatorSpacing';
+        return 'WhiteSpace/OperatorSpacing.inc';
     }
 
     /** @return void */
-    public function testOperatorSpacing()
-    {
-        $this->noSpaceBefore();
-        $this->noSpaceAfter();
-        $this->multiSpacingBefore();
-        $this->multiSpacingAfter();
-    }
-
-    /** @return void */
-    private function noSpaceBefore()
+    public function testNoSpaceBefore()
     {
         $sniff = $this->sniff . '.NoSpaceBefore';
         $message = 'Expected 1 space before "="; 0 found';
-        $this->sniffError(3, $sniff, $message);
+        $this->checkSniff(3, 6, $sniff, $message);
     }
 
     /** @return void */
-    private function noSpaceAfter()
+    public function testNoSpaceAfter()
     {
         $sniff = $this->sniff . '.NoSpaceAfter';
         $message = 'Expected 1 space after "="; 0 found';
-        $this->sniffError(4, $sniff, $message);
+        $this->checkSniff(4, 7, $sniff, $message);
     }
 
     /** @return void */
-    private function multiSpacingBefore()
+    public function testMultiSpacingBefore()
     {
         $sniff = $this->sniff . '.SpacingBefore';
         $message = 'Expected 1 space before "+"; 2 found';
-        $this->sniffError(5, $sniff, $message);
+        $this->checkSniff(5, 12, $sniff, $message);
     }
 
     /** @return void */
-    private function multiSpacingAfter()
+    public function testMultiSpacingAfter()
     {
         $sniff = $this->sniff . '.SpacingAfter';
         $message = 'Expected 1 space after "+"; 2 found';
-        $this->sniffError(6, $sniff, $message);
+        $this->checkSniff(6, 11, $sniff, $message);
     }
 }

@@ -2,9 +2,9 @@
 
 namespace PhpCodeConv\Tests\Sniffs\WhiteSpace;
 
-use PhpCodeConv\Tests\CSAbstractSniffUnitTest;
+use PhpCodeConv\Tests\Sniffs\AbstractTestCase;
 
-final class LanguageConstructSpacingTest extends CSAbstractSniffUnitTest
+final class LanguageConstructSpacingTest extends AbstractTestCase
 {
 
     /** @var string */
@@ -15,33 +15,26 @@ final class LanguageConstructSpacingTest extends CSAbstractSniffUnitTest
         return $this->sniff;
     }
 
-    protected function getTestFile() :string
+    protected function getFilename() :string
     {
-        return 'WhiteSpace/LanguageConstructSpacing';
+        return 'WhiteSpace/LanguageConstructSpacing.inc';
     }
 
     /** @return void */
-    public function testLanguageConstructSpacing()
-    {
-        $this->noSpace();
-        $this->multipleSpace();
-    }
-
-    /** @return void */
-    private function noSpace()
+    public function testNoSpace()
     {
         $sniff = $this->sniff . '.Incorrect';
         $message = 'Language constructs must be followed by a single space; expected' .
         ' "require $blah" but found "require$blah"';
-        $this->sniffError(3, $sniff, $message);
+        $this->checkSniff(3, 1, $sniff, $message);
     }
 
     /** @return void */
-    private function multipleSpace()
+    public function testMultipleSpace()
     {
         $sniff = $this->sniff . '.IncorrectSingle';
         $message = 'Language constructs must be followed by a single space; ' .
         'expected 1 space but found "[30;1m·[0m[30;1m·[0m"';
-        $this->sniffError(4, $sniff, $message);
+        $this->checkSniff(4, 1, $sniff, $message);
     }
 }

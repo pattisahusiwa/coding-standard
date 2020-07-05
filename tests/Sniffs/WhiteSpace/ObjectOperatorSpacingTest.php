@@ -2,9 +2,9 @@
 
 namespace PhpCodeConv\Tests\Sniffs\WhiteSpace;
 
-use PhpCodeConv\Tests\CSAbstractSniffUnitTest;
+use PhpCodeConv\Tests\Sniffs\AbstractTestCase;
 
-final class ObjectOperatorSpacingTest extends CSAbstractSniffUnitTest
+final class ObjectOperatorSpacingTest extends AbstractTestCase
 {
 
     /** @var string */
@@ -15,49 +15,40 @@ final class ObjectOperatorSpacingTest extends CSAbstractSniffUnitTest
         return $this->sniff;
     }
 
-    protected function getTestFile() : string
+    protected function getFilename() : string
     {
-        return 'WhiteSpace/ObjectOperatorSpacing';
+        return 'WhiteSpace/ObjectOperatorSpacing.inc';
     }
 
     /** @return void */
-    public function testLogicalOperatorSpacing()
-    {
-        $this->spaceBeforeArrow();
-        $this->spaceAfterArrow();
-        $this->spaceBeforeColon();
-        $this->spaceAfterColon();
-    }
-
-    /** @return void */
-    private function spaceBeforeArrow()
+    public function testSpaceBeforeArrow()
     {
         $sniff = $this->sniff . '.Before';
         $message = 'Space found before object operator';
-        $this->sniffError(3, $sniff, $message);
+        $this->checkSniff(3, 7, $sniff, $message);
     }
 
     /** @return void */
-    private function spaceAfterArrow()
+    public function testSpaceAfterArrow()
     {
         $sniff = $this->sniff . '.After';
         $message = 'Space found after object operator';
-        $this->sniffError(4, $sniff, $message);
+        $this->checkSniff(4, 6, $sniff, $message);
     }
 
     /** @return void */
-    private function spaceBeforeColon()
+    public function testSpaceBeforeColon()
     {
         $sniff = $this->sniff . '.Before';
         $message = 'Space found before object operator';
-        $this->sniffError(6, $sniff, $message);
+        $this->checkSniff(6, 8, $sniff, $message);
     }
 
     /** @return void */
-    private function spaceAfterColon()
+    public function testSpaceAfterColon()
     {
         $sniff = $this->sniff . '.After';
         $message = 'Space found after object operator';
-        $this->sniffError(7, $sniff, $message);
+        $this->checkSniff(7, 7, $sniff, $message);
     }
 }

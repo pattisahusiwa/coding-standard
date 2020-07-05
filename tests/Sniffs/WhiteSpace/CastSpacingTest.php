@@ -2,9 +2,9 @@
 
 namespace PhpCodeConv\Tests\Sniffs\WhiteSpace;
 
-use PhpCodeConv\Tests\CSAbstractSniffUnitTest;
+use PhpCodeConv\Tests\Sniffs\AbstractTestCase;
 
-final class CastSpacingTest extends CSAbstractSniffUnitTest
+final class CastSpacingTest extends AbstractTestCase
 {
 
     /** @var string */
@@ -15,9 +15,9 @@ final class CastSpacingTest extends CSAbstractSniffUnitTest
         return $this->sniff;
     }
 
-    protected function getTestFile() : string
+    protected function getFilename() : string
     {
-        return 'WhiteSpace/CastSpacing';
+        return 'WhiteSpace/CastSpacing.inc';
     }
 
     /** @return void */
@@ -25,6 +25,6 @@ final class CastSpacingTest extends CSAbstractSniffUnitTest
     {
         $sniff = $this->sniff . '.ContainsWhiteSpace';
         $message = 'Cast statements must not contain whitespace; expected "(int)" but found "( int )"';
-        $this->sniffError(3, $sniff, $message);
+        $this->checkSniff(3, 8, $sniff, $message);
     }
 }

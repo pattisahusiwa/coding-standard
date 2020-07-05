@@ -2,9 +2,9 @@
 
 namespace PhpCodeConv\Tests\Sniffs\WhiteSpace;
 
-use PhpCodeConv\Tests\CSAbstractSniffUnitTest;
+use PhpCodeConv\Tests\Sniffs\AbstractTestCase;
 
-final class MemberVarSpacingTest extends CSAbstractSniffUnitTest
+final class MemberVarSpacingTest extends AbstractTestCase
 {
 
     /** @var string */
@@ -15,34 +15,37 @@ final class MemberVarSpacingTest extends CSAbstractSniffUnitTest
         return $this->sniff;
     }
 
-    protected function getTestFile() : string
+    protected function getFilename() : string
     {
-        return 'WhiteSpace/MemberVarSpacing';
+        return 'WhiteSpace/MemberVarSpacing.inc';
+    }
+
+    /** @return string[] */
+    protected function getExcludeSniff() : array
+    {
+        return [
+                'PSR1.Classes.ClassDeclaration.MissingNamespace',
+                'Squiz.WhiteSpace.FunctionSpacing.Before',
+                'PSR2.Methods.FunctionClosingBrace.SpacingBeforeClose',
+               ];
     }
 
     /** @return void */
-    public function testSpacing()
-    {
-        $this->spaceBeforeFirstProperty();
-        $this->spaceBetweenProperties();
-    }
-
-    /** @return void */
-    private function spaceBeforeFirstProperty()
+    public function testSpaceBeforeFirstProperty()
     {
         $sniff = $this->sniff . '.FirstIncorrect';
         $message = 'Expected 1 blank line(s) before first member var; 0 found';
-        $this->sniffError(5, $sniff, $message);
+        $this->checkSniff(5, 5, $sniff, $message);
     }
 
     /** @return void */
-    private function spaceBetweenProperties()
+    public function testSpaceBetweenProperties()
     {
         $sniff = $this->sniff . '.Incorrect';
         $message = 'Expected 1 blank line(s) before member var; 0 found';
-        $this->sniffError(6, $sniff, $message);
+        $this->checkSniff(6, 5, $sniff, $message);
 
         $message = 'Expected 1 blank line(s) before member var; 2 found';
-        $this->sniffError(9, $sniff, $message);
+        $this->checkSniff(9, 5, $sniff, $message);
     }
 }

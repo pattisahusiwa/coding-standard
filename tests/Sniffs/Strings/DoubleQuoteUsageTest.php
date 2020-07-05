@@ -2,44 +2,32 @@
 
 namespace PhpCodeConv\Tests\Sniffs\Strings;
 
-use PhpCodeConv\Tests\CSAbstractSniffUnitTest;
+use PhpCodeConv\Tests\Sniffs\AbstractTestCase;
 
-final class DoubleQuoteUsageTest extends CSAbstractSniffUnitTest
+final class DoubleQuoteUsageTest extends AbstractTestCase
 {
 
     /** @var string */
     private $sniff = 'Squiz.Strings.DoubleQuoteUsage';
 
-    protected function getSniffs() : string
+    protected function getFilename(): string
     {
-        return $this->sniff;
-    }
-
-    protected function getTestFile(): string
-    {
-        return 'Strings/DoubleQuoteUsage';
+        return 'Strings/DoubleQuoteUsage.inc';
     }
 
     /** @return void */
-    public function testDoubleQuote()
-    {
-        $this->useSingleQuote();
-        $this->containsVar();
-    }
-
-    /** @return void */
-    private function useSingleQuote()
+    public function testUseSingleQuote()
     {
         $sniff = $this->sniff . '.NotRequired';
         $message = 'String "Hello world!" does not require double quotes; use single quotes instead';
-        $this->sniffError(3, $sniff, $message);
+        $this->checkSniff(3, 9, $sniff, $message);
     }
 
     /** @return void */
-    private function containsVar()
+    public function testContainsVar()
     {
         $sniff = $this->sniff . '.ContainsVar';
         $message = 'Variable "$there" not allowed in double quoted string; use concatenation instead';
-        $this->sniffError(4, $sniff, $message);
+        $this->checkSniff(4, 8, $sniff, $message);
     }
 }

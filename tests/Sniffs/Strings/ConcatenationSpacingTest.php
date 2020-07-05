@@ -2,35 +2,24 @@
 
 namespace PhpCodeConv\Tests\Sniffs\Strings;
 
-use PhpCodeConv\Tests\CSAbstractSniffUnitTest;
+use PhpCodeConv\Tests\Sniffs\AbstractTestCase;
 
-final class ConcatenationSpacingTest extends CSAbstractSniffUnitTest
+final class ConcatenationSpacingTest extends AbstractTestCase
 {
 
     /** @var string */
     private $sniff = 'Squiz.Strings.ConcatenationSpacing';
 
-    protected function getSniffs() : string
+    protected function getFilename() : string
     {
-        return $this->sniff;
-    }
-
-    protected function getTestFile() : string
-    {
-        return 'Strings/ConcatenationSpacing';
+        return 'Strings/ConcatenationSpacing.inc';
     }
 
     /** @return void */
-    public function testConcatOperatorPadding()
-    {
-        $this->noSpaceBefore();
-    }
-
-    /** @return void */
-    private function noSpaceBefore()
+    public function testNoSpaceBefore()
     {
         $sniff = $this->sniff . '.PaddingFound';
         $message = 'Concat operator must be surrounded by a single space';
-        $this->sniffError(3, $sniff, $message);
+        $this->checkSniff(3, 15, $sniff, $message);
     }
 }
