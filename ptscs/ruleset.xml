@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset name="phpcodeconv">
+<ruleset name="ptscs">
   <description>Another PHP Coding Standard for PHP_CodeSniffer</description>
 
   <arg name="tab-width" value="4"/>

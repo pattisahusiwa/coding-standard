@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace PhpCodeConv\Tests\Sniffs\Arrays;
+namespace Ptscs\Tests\Sniffs\Arrays;
 
-use PhpCodeConv\Tests\Sniffs\AbstractTestCase;
+use Ptscs\Tests\Sniffs\AbstractTestCase;
 
 final class ArrayBracketSpacingTest extends AbstractTestCase
 {

@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace PhpCodeConv\Tests\Sniffs\Strings;
+namespace Ptscs\Tests\Sniffs\Strings;
 
-use PhpCodeConv\Tests\Sniffs\AbstractTestCase;
+use Ptscs\Tests\Sniffs\AbstractTestCase;
 
 final class EchoedStringsTest extends AbstractTestCase
 {

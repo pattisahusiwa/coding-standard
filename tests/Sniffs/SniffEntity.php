@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace PhpCodeConv\Tests\Sniffs;
+namespace Ptscs\Tests\Sniffs;
 
 final class SniffEntity
 {

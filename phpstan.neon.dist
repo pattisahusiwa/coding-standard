@@ -1,7 +1,7 @@
 parameters:
     level: max
     paths:
-        - phpcodeconv
+        - ptscs
         - tests
 
     excludes_analyse:

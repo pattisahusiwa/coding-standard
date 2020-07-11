@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace PhpCodeConv\Tests\Sniffs\WhiteSpace;
+namespace Ptscs\Tests\Sniffs\WhiteSpace;
 
-use PhpCodeConv\Tests\Sniffs\AbstractTestCase;
+use Ptscs\Tests\Sniffs\AbstractTestCase;
 
 final class LanguageConstructSpacingTest extends AbstractTestCase
 {

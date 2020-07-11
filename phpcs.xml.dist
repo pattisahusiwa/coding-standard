@@ -7,11 +7,11 @@
   <arg value="psv"/>
   <arg name="extensions" value="php"/>
 
-  <file>phpcodeconv</file>
+  <file>ptscs</file>
   <file>tests</file>
 
   <exclude-pattern>vendor</exclude-pattern>
   <exclude-pattern>tests/Inc</exclude-pattern>
 
-  <rule ref="phpcodeconv/ruleset.xml"/>
+  <rule ref="ptscs/ruleset.xml"/>
 </ruleset>

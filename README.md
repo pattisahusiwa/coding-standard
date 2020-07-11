@@ -1,15 +1,15 @@
-# phpcodeconv - PHP Coding Convention
+# ptscs - PHP Coding Standard
 
-[![Packagist License](https://img.shields.io/packagist/l/pattisahusiwa/phpcodeconv)](https://github.com/pattisahusiwa/phpcodeconv/blob/master/LICENSE)
-[![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/pattisahusiwa/phpcodeconv)](https://php.net/)
-[![Packagist Version](https://img.shields.io/packagist/v/pattisahusiwa/phpcodeconv?label=latest)](https://github.com/pattisahusiwa/phpcodeconv/releases)
+[![Packagist License](https://img.shields.io/packagist/l/pattisahusiwa/coding-standard)](https://github.com/pattisahusiwa/coding-standard/blob/master/LICENSE)
+[![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/pattisahusiwa/coding-standard)](https://php.net/)
+[![Packagist Version](https://img.shields.io/packagist/v/pattisahusiwa/coding-standard?label=latest)](https://github.com/pattisahusiwa/coding-standard/releases)
 
 Another PHP Coding Standard for PHP_CodeSniffer
 
 ## Installation
 Install with composer
 ```
-composer require --dev pattisahusiwa/phpcodeconv
+composer require --dev pattisahusiwa/coding-standard
 ```
 
 ## Usage
@@ -28,7 +28,7 @@ Add this content into your `phpcs.xml`
 
   <exclude-pattern>vendor</exclude-pattern>
 
-    <rule ref="phpcodeconv"/>
+    <rule ref="ptscs"/>
 </ruleset>
 ```
 
@@ -36,4 +36,4 @@ Run `phpcs` to validate your source code style.
 
 
 ## License
-See [license](https://github.com/pattisahusiwa/phpcodeconv/blob/master/LICENSE) file.
+See [license](https://github.com/pattisahusiwa/coding-standard/blob/master/LICENSE) file.

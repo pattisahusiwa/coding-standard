@@ -1,5 +1,5 @@
 {
-    "name": "pattisahusiwa/phpcodeconv",
+    "name": "pattisahusiwa/coding-standard",
     "description": "Another PHP Coding Standard for PHP_CodeSniffer",
     "keywords": [
         "standard",
@@ -16,9 +16,9 @@
             "email": "asis.pattisahusiwa@gmail.com"
         }
     ],
-    "homepage": "https://github.com/pattisahusiwa/phpcodeconv",
+    "homepage": "https://github.com/pattisahusiwa/coding-standard",
     "support": {
-        "issues": "https://github.com/pattisahusiwa/phpcodeconv/issues"
+        "issues": "https://github.com/pattisahusiwa/coding-standard/issues"
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
@@ -28,7 +28,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "PhpCodeConv\\Tests\\": "tests"
+            "Ptscs\\Tests\\": "tests"
         }
     },
     "require": {
