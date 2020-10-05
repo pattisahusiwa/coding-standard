@@ -3,3 +3,16 @@
 function    name1  (  )  {   }
 function    name2  (  )  { /* some code */  }
 function    name3  ( string   $var )  { /* some code */  }
+
+
+function name4()
+
+{
+
+
+
+    /* some code */
+
+
+
+}

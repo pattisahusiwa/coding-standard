@@ -13,3 +13,8 @@ function name3(string $var)
 {
     /* some code */
 }
+
+function name4()
+{
+    /* some code */
+}
