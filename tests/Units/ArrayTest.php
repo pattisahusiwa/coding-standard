@@ -5,7 +5,7 @@ use Ptscs\Tests\AbstractTestCase;
 final class ArrayTest extends AbstractTestCase
 {
 
-    public function dataProvider() : array
+    public function dataProvider(): array
     {
         return [
                 'Array declaration' => [

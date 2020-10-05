@@ -5,7 +5,7 @@ use Ptscs\Tests\AbstractTestCase;
 final class StringTest extends AbstractTestCase
 {
 
-    public function dataProvider() : array
+    public function dataProvider(): array
     {
         return [
                 'Echoed String should not be bracketed' => [

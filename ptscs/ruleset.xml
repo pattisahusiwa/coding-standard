@@ -9,7 +9,13 @@
     <type>error</type>
   </rule>
 
-  <rule ref="PSR2"/>
+  <rule ref="PSR12"/>
+
+  <rule ref="PSR12">
+    <exclude name="PSR12.Files.OpenTag"/>
+    <exclude name="PSR12.Files.FileHeader"/>
+  </rule>
+
 
   <!--++++++++++++++++++++++++++++++++++++
     Generic rules

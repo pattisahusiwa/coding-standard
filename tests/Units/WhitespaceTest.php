@@ -5,7 +5,7 @@ use Ptscs\Tests\AbstractTestCase;
 final class WhitespaceTest extends AbstractTestCase
 {
 
-    public function dataProvider() : array
+    public function dataProvider(): array
     {
         return [
                 'Cast test'               => [

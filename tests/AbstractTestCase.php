@@ -20,7 +20,7 @@ abstract class AbstractTestCase extends TestCase
     private $dataPath;
 
     /** @return array<string,string[]> */
-    abstract public function dataProvider() : array;
+    abstract public function dataProvider(): array;
 
     /** @return void */
     protected function setUp()
