@@ -6,26 +6,26 @@ $array      =   [  ] ;
 
     $array    =    array (  'key_1'=>'Value'  ) ;
 
-$array = array  (
-    'key_1'=>'Value'
-);
+$array   =   array  (
+'key_1'=>'Value'
+)  ;
 
-$array = array  (
+$array   =   array  (
 'key_1'=>'Value',
 'very_long_key'=>'Value'
-);
+)  ;
 
-$myArray['key'] = $value;
+$myArray  [ 'key' ]   =   $value  ;
 
-$myArray = [  'key' => 'value'  ];
+$myArray   =    [  'key' => 'value'  ]  ;
 
-$myArray = [
-'key' => 'value'
-];
+$myArray    =    [
+'key'   =>    'value'
+]  ;
 
-$myArray = [
-'key_1'         => 'Value',
-'very_long_key' => 'Value'
+$myArray   =    [
+'key_1'                         =>'Value'       ,
+'very_long_key'     =>      'Value'
 ];
 
 array_pop (  array  ( 'key_1'   =>   'Value' )  ) ;

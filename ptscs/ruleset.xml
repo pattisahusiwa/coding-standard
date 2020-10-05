@@ -53,6 +53,7 @@
     <exclude name="Squiz.Arrays.ArrayDeclaration.SpaceAfterDoubleArrow"/>
     <exclude name="Squiz.Arrays.ArrayDeclaration.NoComma"/>
   </rule>
+  <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
 
   <!--++++++++++++++++++++++++++++++++++++
     Function rules
