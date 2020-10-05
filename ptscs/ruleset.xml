@@ -13,7 +13,7 @@
 
   <!--++++++++++++++++++++++++++++++++++++
     Generic rules
-    ++++++++++++++++++++++++++++++++++++-->
+  ++++++++++++++++++++++++++++++++++++-->
   <rule ref="Generic.Formatting.MultipleStatementAlignment"/>
   <rule ref="PEAR.Files.IncludingFile.BracketsNotRequired"/>
 
@@ -21,7 +21,7 @@
 
   <!--++++++++++++++++++++++++++++++++++
     Whitespace rules
-    ++++++++++++++++++++++++++++++++++-->
+  ++++++++++++++++++++++++++++++++++-->
   <!--
     Fix wrong indentation, eq:
       $a = 1;
@@ -48,7 +48,7 @@
 
   <!--++++++++++++++++++++++++++++++++++
     Casting rules
-    ++++++++++++++++++++++++++++++++++-->
+  ++++++++++++++++++++++++++++++++++-->
   <rule ref="Generic.Formatting.SpaceAfterCast"/>
   <rule ref="Squiz.WhiteSpace.CastSpacing"/>
 
@@ -56,7 +56,7 @@
 
   <!--++++++++++++++++++++++++++++++++++++
     Array rules
-    ++++++++++++++++++++++++++++++++++++-->
+  ++++++++++++++++++++++++++++++++++++-->
   <rule ref="Squiz.Arrays.ArrayDeclaration">
     <!-- Has been handled by Squiz.WhiteSpace.OperatorSpacing -->
     <exclude name="Squiz.Arrays.ArrayDeclaration.SpaceAfterDoubleArrow"/>
@@ -68,7 +68,7 @@
 
   <!--++++++++++++++++++++++++++++++++++++
     Function rules
-    ++++++++++++++++++++++++++++++++++++-->
+  ++++++++++++++++++++++++++++++++++++-->
   <!-- Override PSR2 rule-->
   <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingAfterHint">
     <severity>9</severity>
@@ -80,4 +80,10 @@
     </properties>
   </rule>
   <rule ref="Squiz.WhiteSpace.FunctionOpeningBraceSpace"/>
+
+  <!--++++++++++++++++++++++++++++++++++++
+    String rules
+  ++++++++++++++++++++++++++++++++++++-->
+  <rule ref="Squiz.Strings.EchoedStrings"/>
+
 </ruleset>
