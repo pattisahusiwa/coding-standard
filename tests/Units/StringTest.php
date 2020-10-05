@@ -12,6 +12,14 @@ final class StringTest extends AbstractTestCase
                                                             'EchoedStrings.php.fixed',
                                                             'EchoedStrings.php.inc',
                                                            ],
+                'Double Quote'                          => [
+                                                            'DoubleQuote.php.fixed',
+                                                            'DoubleQuote.php.inc',
+                                                           ],
+                'Concatenation spacing'                 => [
+                                                            'concatenation.php.fixed',
+                                                            'concatenation.php.inc',
+                                                           ]
                ];
     }
 }

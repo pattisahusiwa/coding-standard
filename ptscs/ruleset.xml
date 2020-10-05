@@ -81,9 +81,17 @@
   </rule>
   <rule ref="Squiz.WhiteSpace.FunctionOpeningBraceSpace"/>
 
+
+
   <!--++++++++++++++++++++++++++++++++++++
     String rules
   ++++++++++++++++++++++++++++++++++++-->
   <rule ref="Squiz.Strings.EchoedStrings"/>
+  <rule ref="Squiz.Strings.DoubleQuoteUsage"/>
+  <rule ref="Squiz.Strings.ConcatenationSpacing">
+    <properties>
+      <property name="spacing" value="1" />
+    </properties>
+  </rule>
 
 </ruleset>
