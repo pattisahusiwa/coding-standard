@@ -1,8 +1,6 @@
 <?php declare(strict_types=1);
 
-    /**
-    * Block comment
-    */
+    // Block comment
 if (true) {
 // Line comment
         $vara = 1;

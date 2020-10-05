@@ -12,8 +12,8 @@
   <rule ref="PSR12"/>
 
   <rule ref="PSR12">
-    <exclude name="PSR12.Files.OpenTag"/>
-    <exclude name="PSR12.Files.FileHeader"/>
+    <exclude name="PSR12.Files.OpenTag.NotAlone"/>
+    <exclude name="PSR12.Files.FileHeader.SpacingAfterBlock"/>
   </rule>
 
 
@@ -23,7 +23,25 @@
   <rule ref="Generic.PHP.RequireStrictTypes"/>
   <rule ref="Generic.Formatting.MultipleStatementAlignment"/>
   <rule ref="PEAR.Files.IncludingFile.BracketsNotRequired"/>
-
+  <!-- Ban some functions -->
+  <rule ref="Generic.PHP.ForbiddenFunctions">
+    <properties>
+      <property name="error" value="true" />
+      <property name="forbiddenFunctions" type="array">
+        <element key="sizeof" value="count"/>
+        <element key="delete" value="unset"/>
+        <element key="print" value="echo"/>
+        <element key="each" value="foreach"/>
+        <element key="is_null" value="null"/>
+        <element key="create_function" value="null"/>
+        <element key="var_dump" value="null"/>
+        <element key="print_r" value="null"/>
+        <element key="debug_print_backtrace" value="null"/>
+        <element key="eval" value="null"/>
+        <element key="extract" value="null"/>
+      </property>
+    </properties>
+  </rule>
 
 
   <!--++++++++++++++++++++++++++++++++++
@@ -101,4 +119,12 @@
     </properties>
   </rule>
 
+
+  <!--++++++++++++++++++++++++++++++++++++
+    Class declaration rules
+  ++++++++++++++++++++++++++++++++++++-->
+  <rule ref="Squiz.Classes.ClassFileName"/>
+  <rule ref="PSR2.Namespaces.NamespaceDeclaration"/>
+  <rule ref="PSR2.Namespaces.UseDeclaration"/>
+  <rule ref="Squiz.WhiteSpace.MemberVarSpacing"/>
 </ruleset>

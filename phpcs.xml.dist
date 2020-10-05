@@ -18,4 +18,8 @@
   <rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
     <exclude-pattern>/tests/</exclude-pattern>
   </rule>
+
+  <rule ref="Squiz.Classes.ClassFileName.NoMatch">
+    <exclude-pattern>/tests/**/_data</exclude-pattern>
+  </rule>
 </ruleset>
