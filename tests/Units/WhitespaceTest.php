@@ -27,6 +27,14 @@ final class WhitespaceTest extends AbstractTestCase
                 'Scope Indent test'       => [
                                               'ScopeIndent.php.fixed',
                                               'ScopeIndent.php.inc',
+                                             ],
+                'Object Operator test'    => [
+                                              'object.php.fixed',
+                                              'object.php.inc',
+                                             ],
+                'Operator test'           => [
+                                              'operator.php.fixed',
+                                              'operator.php.inc',
                                              ]
                ];
     }
