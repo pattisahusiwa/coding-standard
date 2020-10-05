@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-use Ptscs\Tests\AbstractTestCase;
+use Ptscs\Tests\AbstractFixable;
 
-final class ArrayTest extends AbstractTestCase
+final class ArrayTest extends AbstractFixable
 {
 
     public function dataProvider(): array

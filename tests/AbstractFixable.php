@@ -7,7 +7,7 @@ use PHP_CodeSniffer\Files\LocalFile;
 use PHP_CodeSniffer\Ruleset;
 use PHPUnit\Framework\TestCase;
 
-abstract class AbstractTestCase extends TestCase
+abstract class AbstractFixable extends TestCase
 {
 
     /** @var Config */
@@ -34,7 +34,7 @@ abstract class AbstractTestCase extends TestCase
 
         //@phpstan-ignore-next-line
         $dirname        = strtolower(str_replace('Test', '', array_pop($parts)));
-        $this->dataPath = __DIR__ . '/Units/_data/' . $dirname . '/';
+        $this->dataPath = __DIR__ . '/Fixable/_data/' . $dirname . '/';
     }
 
     /**
@@ -62,8 +62,10 @@ abstract class AbstractTestCase extends TestCase
         // Attempt to fix the errors.
         $this->assertTrue($phpcsFile->fixer->fixFile());
 
-        $fixable = $phpcsFile->getFixableCount();
-        $this->assertSame(0, $fixable, sprintf('Failed to fix %d fixable violations in %s', $fixable, $actual));
+        if ($phpcsFile->getFixableCount() > 0) {
+            $fixable = $phpcsFile->getFixableCount();
+            $this->fail(sprintf('Failed to fix %d fixable violations in %s', $fixable, $actual));
+        }
 
         // Compare with fixed file
         $diff = $phpcsFile->fixer->generateDiff($expectedFile);
@@ -74,6 +76,16 @@ abstract class AbstractTestCase extends TestCase
                 $expected,
                 $diff
             );
+            $this->fail($msg);
+        }
+
+        if ($phpcsFile->getErrorCount() > 0) {
+            $msg = sprintf('There are %d errors in the test data', $phpcsFile->getErrorCount());
+            $this->fail($msg);
+        }
+
+        if ($phpcsFile->getWarningCount() > 0) {
+            $msg = sprintf('There are %d warnings in the test data', $phpcsFile->getWarningCount());
             $this->fail($msg);
         }
     }
