@@ -16,16 +16,23 @@ abstract class AbstractTestCase extends TestCase
     /** @var Ruleset */
     private $ruleset;
 
+    /** @var string */
+    private $dataPath;
+
     /** @return array<string,string[]> */
     abstract public function dataProvider() : array;
 
     /** @return void */
     protected function setUp()
     {
-        $this->config = new Config();
+        $this->config        = new Config();
         $this->config->cache = false;
 
         $this->ruleset = new Ruleset($this->config);
+
+        $parts          = explode('\\', static::class);
+        $dirname        = strtolower(rtrim(array_pop($parts), 'Test')); //@phpstan-ignore-line
+        $this->dataPath = __DIR__ . '/Units/_data/' . $dirname . '/';
     }
 
     /**
@@ -35,8 +42,8 @@ abstract class AbstractTestCase extends TestCase
      */
     public function testSniff(string $expected, string $actual)
     {
-        $expectedFile = $this->filepath($expected);
-        $actualFile = $this->filepath($actual);
+        $expectedFile = $this->dataPath . $expected;
+        $actualFile   = $this->dataPath . $actual;
 
         $this->assertFileExists($expectedFile);
         $this->assertFileExists($actualFile);
@@ -57,7 +64,7 @@ abstract class AbstractTestCase extends TestCase
         $this->assertSame(0, $fixable, sprintf('Failed to fix %d fixable violations in %s', $fixable, $actual));
 
         // Compare with fixed file
-        $diff  = $phpcsFile->fixer->generateDiff($expectedFile);
+        $diff = $phpcsFile->fixer->generateDiff($expectedFile);
         if ($diff !== '') {
             $msg = sprintf(
                 "Fixed version of %s does not match expected version in %s; the diff is\n%s",
@@ -67,11 +74,5 @@ abstract class AbstractTestCase extends TestCase
             );
             $this->fail($msg);
         }
-        // $this->assertSame('', $diff, $msg);
-    }
-
-    private function filepath(string $filename) : string
-    {
-        return __DIR__ . '/Units/_data/' . $filename;
     }
 }
