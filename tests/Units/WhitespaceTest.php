@@ -23,6 +23,10 @@ final class WhitespaceTest extends AbstractTestCase
                 'Logical Operator test'   => [
                                               'logical-operator.php.fixed',
                                               'logical-operator.php.inc',
+                                             ],
+                'Scope Indent test'       => [
+                                              'ScopeIndent.php.fixed',
+                                              'ScopeIndent.php.inc',
                                              ]
                ];
     }
