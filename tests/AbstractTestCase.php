@@ -30,8 +30,10 @@ abstract class AbstractTestCase extends TestCase
 
         $this->ruleset = new Ruleset($this->config);
 
-        $parts          = explode('\\', static::class);
-        $dirname        = strtolower(rtrim(array_pop($parts), 'Test')); //@phpstan-ignore-line
+        $parts = explode('\\', static::class);
+
+        //@phpstan-ignore-next-line
+        $dirname        = strtolower(str_replace('Test', '', array_pop($parts)));
         $this->dataPath = __DIR__ . '/Units/_data/' . $dirname . '/';
     }
 
