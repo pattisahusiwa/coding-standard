@@ -42,6 +42,8 @@
       </property>
     </properties>
   </rule>
+  <rule ref="Squiz.Operators.ComparisonOperatorUsage"/>
+
 
 
   <!--++++++++++++++++++++++++++++++++++
