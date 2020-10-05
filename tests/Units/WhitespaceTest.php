@@ -19,6 +19,10 @@ final class WhitespaceTest extends AbstractTestCase
                 'Language construct test' => [
                                               'language.php.fixed',
                                               'language.php.inc',
+                                             ],
+                'Logical Operator test'   => [
+                                              'logical-operator.php.fixed',
+                                              'logical-operator.php.inc',
                                              ]
                ];
     }
