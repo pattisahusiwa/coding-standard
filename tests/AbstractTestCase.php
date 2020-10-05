@@ -25,12 +25,6 @@ abstract class AbstractTestCase extends TestCase
         $this->config->cache = false;
 
         $this->ruleset = new Ruleset($this->config);
-
-        $parts = explode('\\', static::class);
-
-        //@phpstan-ignore-next-line
-        $dirname        = strtolower(str_replace('Test', '', array_pop($parts)));
-        $this->dataPath = __DIR__ . '/Fixable/_data/' . $dirname . '/';
     }
 
     protected function doAssertion(string $filename): LocalFile
@@ -41,20 +35,6 @@ abstract class AbstractTestCase extends TestCase
 
         $phpcsFile = new LocalFile($filepath, $this->ruleset, $this->config);
         $phpcsFile->process();
-
-        $this->assertGreaterThan(
-            0,
-            $phpcsFile->getFixableCount(),
-            sprintf("File %s doesn't have fixable violations", $filename)
-        );
-
-        // Attempt to fix the errors.
-        $this->assertTrue($phpcsFile->fixer->fixFile());
-
-        if ($phpcsFile->getFixableCount() > 0) {
-            $fixable = $phpcsFile->getFixableCount();
-            $this->fail(sprintf('Failed to fix %d fixable violations in %s', $fixable, $filename));
-        }
 
         return $phpcsFile;
     }

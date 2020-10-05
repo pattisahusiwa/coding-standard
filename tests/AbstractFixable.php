@@ -8,6 +8,17 @@ abstract class AbstractFixable extends AbstractTestCase
     /** @return array<string,string[]> */
     abstract public function dataProvider(): array;
 
+    protected function setUp()
+    {
+        parent::setUp();
+
+        $parts = explode('\\', static::class);
+
+        //@phpstan-ignore-next-line
+        $dirname        = strtolower(str_replace('Test', '', array_pop($parts)));
+        $this->dataPath = __DIR__ . '/Fixable/_data/' . $dirname . '/';
+    }
+
     /**
      * @dataProvider dataProvider
      *
@@ -18,6 +29,20 @@ abstract class AbstractFixable extends AbstractTestCase
         $expectedFile = $this->dataPath . $expected;
 
         $phpcsFile = $this->doAssertion($actual);
+
+        $this->assertGreaterThan(
+            0,
+            $phpcsFile->getFixableCount(),
+            sprintf("File %s doesn't have fixable violations", $actual)
+        );
+
+        // Attempt to fix the errors.
+        $this->assertTrue($phpcsFile->fixer->fixFile());
+
+        if ($phpcsFile->getFixableCount() > 0) {
+            $fixable = $phpcsFile->getFixableCount();
+            $this->fail(sprintf('Failed to fix %d fixable violations in %s', $fixable, $actual));
+        }
 
         // Compare with fixed file
         $diff = $phpcsFile->fixer->generateDiff($expectedFile);

@@ -20,6 +20,7 @@
   <!--++++++++++++++++++++++++++++++++++++
     Generic rules
   ++++++++++++++++++++++++++++++++++++-->
+  <rule ref="Generic.PHP.RequireStrictTypes"/>
   <rule ref="Generic.Formatting.MultipleStatementAlignment"/>
   <rule ref="PEAR.Files.IncludingFile.BracketsNotRequired"/>
 
