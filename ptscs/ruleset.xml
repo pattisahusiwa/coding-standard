@@ -15,6 +15,9 @@
     Generic rules
     ++++++++++++++++++++++++++++++++++++-->
   <rule ref="Generic.Formatting.MultipleStatementAlignment"/>
+  <rule ref="PEAR.Files.IncludingFile.BracketsNotRequired"/>
+
+
 
   <!--++++++++++++++++++++++++++++++++++
     Whitespace rules
@@ -38,12 +41,16 @@
   </rule>
   <rule ref="Squiz.WhiteSpace.OperatorSpacing"/>
   <rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
+  <rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
+
 
   <!--++++++++++++++++++++++++++++++++++
     Casting rules
     ++++++++++++++++++++++++++++++++++-->
   <rule ref="Generic.Formatting.SpaceAfterCast"/>
   <rule ref="Squiz.WhiteSpace.CastSpacing"/>
+
+
 
   <!--++++++++++++++++++++++++++++++++++++
     Array rules
@@ -54,6 +61,8 @@
     <exclude name="Squiz.Arrays.ArrayDeclaration.NoComma"/>
   </rule>
   <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
+
+
 
   <!--++++++++++++++++++++++++++++++++++++
     Function rules

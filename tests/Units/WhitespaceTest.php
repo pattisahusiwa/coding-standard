@@ -8,14 +8,18 @@ final class WhitespaceTest extends AbstractTestCase
     public function dataProvider() : array
     {
         return [
-                'Cast style'     => [
-                                     'cast.php.fixed',
-                                     'cast.php.inc',
-                                    ],
-                'Function style' => [
-                                     'function.php.fixed',
-                                     'function.php.inc',
-                                    ]
+                'Cast test'               => [
+                                              'cast.php.fixed',
+                                              'cast.php.inc',
+                                             ],
+                'Function test'           => [
+                                              'function.php.fixed',
+                                              'function.php.inc',
+                                             ],
+                'Language construct test' => [
+                                              'language.php.fixed',
+                                              'language.php.inc',
+                                             ]
                ];
     }
 }
