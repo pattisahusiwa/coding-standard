@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit colors="true" bootstrap="tests/bootstrap.php" verbose="false" debug="false" processIsolation="false" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" stopOnFailure="false" forceCoversAnnotation="false" mapTestClassNameToCoveredClassName="false" cacheTokens="false" backupGlobals="false" backupStaticAttributes="false">
+<phpunit colors="true" bootstrap="tests/bootstrap.php">
 
   <testsuites>
     <testsuite name="alltest">
-      <directory suffix="Test.php">tests/Sniffs</directory>
+      <directory suffix="Test.php">tests</directory>
     </testsuite>
   </testsuites>
 </phpunit>

@@ -1,6 +1,10 @@
 # Change Log
 
 ## [Unreleased]
+### Added
+  - `Squiz.WhiteSpace.SemicolonSpacing`
+  - `Generic.Formatting.MultipleStatementAlignment`
+  - `Squiz.Arrays.ArrayDeclaration.SpaceAfterKeyword`
 
 ## [0.3] - 2020-08-11
   - Rename project name

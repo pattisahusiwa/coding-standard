@@ -1,0 +1,29 @@
+<?php declare(strict_types=1);
+
+$array    =    array () ;
+
+$array      =   [  ] ;
+
+    $array    =    array (  'key_1'=>'Value'  ) ;
+
+    $array    =    array (
+        'key_1'=>'Value'  ) ;
+
+$array    =    array ( 'key_1'=>'Value','very_long_key'=>'Value' ) ;
+
+$myArray  [ 'key' ]            =   $value ;
+
+$myArray   =   [  'key'  =>   'value'  ]  ;
+
+$myArray   =   [
+    'key'  =>   'value'  ]  ;
+
+    $myArray   =  ['key_1'=>'Value','very_long_key'=>'Value'];
+
+array_pop( array  ( 'key_1'=>'Value' ) ) ;
+
+array_pop( array (  'key_1'=>'Value','very_long_key'=>'Value'  ) ) ;
+
+array_pop ( [  'key_1'=>'Value'  ] ) ;
+
+array_pop( [ 'key_1'=>'Value','very_long_key'=>'Value'  ] ) ;

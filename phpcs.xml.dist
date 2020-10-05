@@ -11,7 +11,11 @@
   <file>tests</file>
 
   <exclude-pattern>vendor</exclude-pattern>
-  <exclude-pattern>tests/Inc</exclude-pattern>
+  <exclude-pattern>tests/**/_data</exclude-pattern>
 
   <rule ref="ptscs/ruleset.xml"/>
+
+  <rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
+    <exclude-pattern>/tests/</exclude-pattern>
+  </rule>
 </ruleset>
