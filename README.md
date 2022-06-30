@@ -7,10 +7,14 @@
 > Another PHP Coding Standard for PHP_CodeSniffer based on `PSR-12` with some exceptions and additions.
 
 - [PHP coding standard based on PSR-12](#php-coding-standard-based-on-psr-12)
+  - [Deprecated](#deprecated)
   - [Installation](#installation)
   - [Usage](#usage)
   - [Coding style](#coding-style)
   - [License](#license)
+
+## Deprecated
+Please use [asispts/ptscs](https://github.com/asispts/ptscs)
 
 ## Installation
 Install with composer
