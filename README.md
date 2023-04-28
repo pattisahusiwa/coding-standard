@@ -1,3 +1,5 @@
+> This repository has been archived. Please use [`asispts/ptscs`](https://github.com/asispts/ptscs) instead.
+
 # PHP coding standard based on PSR-12
 
 [![Packagist License](https://img.shields.io/packagist/l/pattisahusiwa/coding-standard)](https://github.com/pattisahusiwa/coding-standard/blob/master/LICENSE)
